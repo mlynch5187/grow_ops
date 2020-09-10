@@ -1,0 +1,17 @@
+<h1> Create a New Garden </h1>
+
+<%= form_for :garden, :url => "/users/gardens" do |f| %>
+  <%= f.label :name, 'Name of Garden:' %>
+  <%= f.text_field :name %><br>
+  <%= f.label :length_feet, 'Length in feet:' %>
+  <%= number_field_tag :length_feet, nil, min: 1 %>
+  <%= f.label :length_inches, 'Inches:' %>
+  <%= number_field_tag :length_inches, nil, min: 1 %><br>
+  <%= f.label :width_feet, 'Width in feet:' %>
+  <%= number_field_tag :width_feet, nil, min: 1 %>
+  <%= f.label :width_inches, 'Inches:' %>
+  <%= number_field_tag :width_inches, nil, min: 1 %><br>
+  <%= label_tag :location, '5 Digit Zip Code:' %>
+  <%= f.number_field :location %><br>
+  <%= submit_tag 'Create Garden', class: 'submit' %>
+<% end %>

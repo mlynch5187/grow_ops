@@ -7,4 +7,7 @@ Rails.application.routes.draw do
   get '/user', to: 'users#show'
 
   delete '/', to: 'sessions#destroy'
+
+  get '/user/gardens/new', to: 'gardens#new'
+  post '/user/gardens', to: 'gardens#create'
 end

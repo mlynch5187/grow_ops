@@ -6,12 +6,9 @@ Rails.application.routes.draw do
 
 
   delete '/', to: 'sessions#destroy'
-
-  # get '/user/gardens/new', to: 'gardens#new'
-  # post '/user/gardens', to: 'gardens#create'
+  get '/dashboard', to: 'users#show'
 
   namespace :users do
-    get '/show', to: 'users#show'
     resources :gardens
   end
 end

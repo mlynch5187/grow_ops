@@ -5,7 +5,7 @@ RSpec.describe 'As a logged in user' do
     stub_omniauth
     @john = create(:omniauth_mock_user)
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@john)
-    visit '/user'
+    visit '/dashboard'
   end
 
   it "on my dashboard I see a header with user email, app info, log out button" do
@@ -21,12 +21,14 @@ RSpec.describe 'As a logged in user' do
     expect(page).to have_button("Create a new garden")
     click_on("Create a new garden")
 
-    expect(current_path).to eq("/user/gardens/new")
+    expect(current_path).to eq("/users/gardens/new")
 
     expect(page).to have_content("Create a New Garden")
     expect(page).to have_field("Name")
-    expect(page).to have_field("length")
-    expect(page).to have_field("width")
-    expect(page).to have_content("Zip Code")
+    expect(page).to have_field("length_feet")
+    expect(page).to have_field("length_inches")
+    expect(page).to have_field("width_feet")
+    expect(page).to have_field("width_inches")
+    expect(page).to have_field("garden_location")
   end
 end

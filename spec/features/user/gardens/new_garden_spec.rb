@@ -5,11 +5,17 @@ RSpec.describe 'As a logged in user' do
     stub_omniauth
     @john = create(:omniauth_mock_user)
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@john)
-    visit '/user/gardens/new'
+    visit '/users/gardens/new'
   end
 
   it "can create a new garden" do
-    fill_in "name", with: "My new garden"
-    fill_in "length", with: "My new garden"
+    fill_in "Name", with: "My new garden"
+    fill_in "length_feet", with: 1
+    fill_in "length_inches", with: 2
+    fill_in "width_feet", with: 3
+    fill_in "width_inches", with: 4
+    fill_in "garden_location", with: "80218"
+
+    click_on("Create Garden")
   end
 end

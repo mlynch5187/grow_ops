@@ -1,3 +1,4 @@
+<div class="create-garden">
 <h1> Create a New Garden </h1>
 
 <%= form_tag "/users/gardens", method: :post do %>
@@ -18,6 +19,7 @@
 
   <%= label_tag :zip_code, '5 Digit Zip Code:' %>
   <%= text_field_tag :zip_code %><br>
-  
-  <%= submit_tag 'Create Garden', class: 'submit' %>
+
+  <%= submit_tag 'Create Garden', class: 'btn btn-success' %>
 <% end %>
+</div>

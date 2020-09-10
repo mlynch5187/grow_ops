@@ -1,0 +1,51 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+
+
+.navbar-nav > li > a {
+  padding: 3px;
+}
+
+.create-garden {
+  background-image: url("https://www.vpr.org/sites/vpr/files/styles/x_large/public/201703/Seed-iStock-bo1982-20170316.jpg
+");
+  background-size: cover no-repeat;
+}
+.google-button {
+  display: flex;
+  justify-content: center;
+  margin: 10%;
+}
+
+footer {
+	margin: 100px 0 50px 0px;
+	padding-top: 20px;
+	border-top: 1px solid #ddd;
+	width: 60%;
+	display: flex;
+	justify-content: flex-start;
+	align-self: center;
+}
+
+footer small {
+	display: block;
+	width: 70%;
+	text-align: left;
+	font-style: italic;
+	font-size: .8em;
+	line-height: 20px;
+}
+
+.center {
+  text-align: center;
+}
+
+hr {
+    border: none;
+    border-top: 3px double #333;
+    color: #333;
+    overflow: visible;
+    text-align: center;
+    height: 5px;
+}

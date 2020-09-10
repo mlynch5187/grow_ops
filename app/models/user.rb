@@ -3,7 +3,7 @@ class User < ApplicationRecord
   validates :uid, presence: true, uniqueness: true
   validates :google_token, presence: true, uniqueness: true
 
-  # has_many :gardens
+  has_many :gardens
 
   def self.from_omniauth(access_token)
     user = find_by(uid: access_token.uid)

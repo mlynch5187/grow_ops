@@ -14,8 +14,12 @@ RSpec.describe 'As a logged in user' do
     fill_in "length_inches", with: 2
     fill_in "width_feet", with: 3
     fill_in "width_inches", with: 4
-    fill_in "garden_location", with: "80218"
+    fill_in "zip_code", with: "80218"
 
     click_on("Create Garden")
+
+    expect(current_path).to eq("/dashboard")
+
+    expect(page).to have_content("My new garden")
   end
 end

@@ -29,6 +29,6 @@ RSpec.describe 'As a logged in user' do
     expect(page).to have_field("length_inches")
     expect(page).to have_field("width_feet")
     expect(page).to have_field("width_inches")
-    expect(page).to have_field("garden_location")
+    expect(page).to have_field("zip_code")
   end
 end

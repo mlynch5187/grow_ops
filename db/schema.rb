@@ -17,16 +17,22 @@ ActiveRecord::Schema.define(version: 2020_09_10_175143) do
 
   create_table "gardens", force: :cascade do |t|
     t.string "name"
-    t.float "square_feet"
-    t.string "location"
+    t.integer "length_cm"
+    t.integer "width_cm"
+    t.string "zip_code"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_gardens_on_user_id"
   end
 
   create_table "plants", force: :cascade do |t|
     t.string "name"
+    t.integer "trefle_id"
+    t.bigint "garden_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["garden_id"], name: "index_plants_on_garden_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -38,4 +44,6 @@ ActiveRecord::Schema.define(version: 2020_09_10_175143) do
     t.string "uid"
   end
 
+  add_foreign_key "gardens", "users"
+  add_foreign_key "plants", "gardens"
 end

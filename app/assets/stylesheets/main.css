@@ -36,3 +36,7 @@ footer small {
 	font-size: .8em;
 	line-height: 20px;
 }
+
+.center {
+  text-align: center;
+}

@@ -1,1 +1,8 @@
-<%= button_to "Create a new garden", "/user/gardens/new", method: :get%>
+<%= button_to "Create a new garden", "/users/gardens/new", method: :get%>
+<br>
+<% if current_user.gardens.any? %>
+  <% @gardens.each do |garden| %>
+    <%= garden.name %><br>
+    <%= link_to "Add plants to garden", "/garden/#{garden.id}/plants/new"%>
+  <% end %>
+<% end %>

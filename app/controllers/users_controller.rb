@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
-  def show; end
-
+  def show
+    @gardens = Garden.where(:user_id == current_user.id)
+  end
 end

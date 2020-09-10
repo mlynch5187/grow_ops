@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     user.google_refresh_token = refresh_token if refresh_token.present?
     user.save
     session[:user_id] = user.id
-    redirect_to '/user'
+    redirect_to "/dashboard"
   end
 
   def destroy

@@ -21,5 +21,6 @@ RSpec.describe 'As a logged in user' do
     expect(current_path).to eq("/dashboard")
 
     expect(page).to have_content("My new garden")
+    expect(page).to have_link("Add plants to garden")
   end
-end
+end 

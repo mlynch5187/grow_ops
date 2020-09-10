@@ -31,6 +31,9 @@ rescue ActiveRecord::PendingMigrationError => e
   exit 1
 end
 RSpec.configure do |config|
+  config.include FactoryBot::Syntax::Methods
+  # FactoryBot.definition_file_paths = [File.expand_path('../factories', __FILE__)]
+  # FactoryBot.find_definitions
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
@@ -69,5 +72,23 @@ Shoulda::Matchers.configure do |config|
   config.integrate do |with|
     with.test_framework :rspec
     with.library :rails
+  end
+
+  def stub_omniauth
+    OmniAuth.config.test_mode = true
+    omniauth_google_hash = {
+        provider: "google_oauth2",
+        uid: '100000000000000000000',
+        info: {
+            email: 'john@example.com'
+        },
+        credentials: {
+            token: 'MOCK_OMNIAUTH_GOOGLE_TOKEN',
+            refresh_token: 'MOCK_OMNIAUTH_GOOGLE_REFRESH TOKEN',
+            expires_at: DateTime.now,
+            expires: true
+        }
+    }
+    OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new(omniauth_google_hash)
   end
 end

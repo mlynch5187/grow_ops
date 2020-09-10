@@ -8,18 +8,19 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
-  <body>
-    <nav class="topnav">
-      <div class='left'>
+<header>
+    <nav id="main-nav">
         <% if current_user %>
-        <h3>Welcome <%= current_user.email %>!</h3>
-        </div>
-        <div class='center'>
-          <h3>Grow Ops: What Will You Grow Today?</h3>
+          Welcome <%= current_user.email %>!
+          Grow Ops: What Will You Grow Today?
+          <%= link_to "Logout", root_path, method: :delete %>
         <% end %>
-        <hr>
-      </div>
+    </nav>
+  </header>
+  <body>
     <%= yield %>
   </body>
+    <footer>
+      <small>2020 - Mod 3 Paired Project - Grow Ops<br>Nick Edwin, Chandler Hulstrom, Michael Alex Lynch, Ryan Laleh</small>
+    </footer>
 </html>

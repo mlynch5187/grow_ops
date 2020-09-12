@@ -1,2 +1,10 @@
+<h4>We've randomly selected 60 plants that will grow in your garden</h4>
+<h3>Choose your favorite 25 to get started!</h3>
+
 <% @plants.each do |plant| %>
-  <%= plant %>
+  <%= plant[:common_name] %>
+  <img src="<%= plant[:image_url] %>" alt="<%= plant[:common_name] %>" style="width:200px;height:300px;"><br>
+<% end %>
+
+
+<%# 60 checkboxes... with a max selection of 25 %>

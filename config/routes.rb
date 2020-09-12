@@ -8,6 +8,12 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'users#show'
 
   namespace :users do
-    resources :gardens
+    resources :gardens do
+      resources :plants
+    end
   end
+
+
+
+
 end

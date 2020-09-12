@@ -23,4 +23,26 @@ RSpec.describe 'As a logged in user' do
     expect(page).to have_content("My new garden")
     expect(page).to have_link("Add plants to garden")
   end
-end 
+
+  it "can add plants to a new garden" do
+    fill_in "Name", with: "My new garden"
+    fill_in "length_feet", with: 1
+    fill_in "length_inches", with: 2
+    fill_in "width_feet", with: 3
+    fill_in "width_inches", with: 4
+    fill_in "zip_code", with: "80218"
+
+    click_on("Create Garden")
+
+    click_on("Add plants to garden")
+
+    expect(current_path).to eq("/gardens/1/plants/new")
+
+    expect(page).to have_content("Recommended plants for your area:")
+
+    expect(page).to have_css(".plants")
+
+    expect(page).to have_content("Remaining plot size:")
+    expect(page).to have_button("Add Plants to Garden")
+  end
+end

@@ -3,6 +3,6 @@
 <% if current_user.gardens.any? %>
   <% @gardens.each do |garden| %>
     <%= garden.name %><br>
-    <%= link_to "Add plants to garden", "/garden/#{garden.id}/plants/new"%>
+    <%= link_to "Add plants to garden", "/users/gardens/#{garden.id}/plants/new"%>
   <% end %>
 <% end %>

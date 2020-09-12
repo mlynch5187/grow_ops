@@ -14,7 +14,8 @@ RSpec.describe 'As a logged in user' do
     fill_in "length_inches", with: 2
     fill_in "width_feet", with: 3
     fill_in "width_inches", with: 4
-    fill_in "zip_code", with: "80218"
+    fill_in "zip_code", with: "80503"
+    fill_in "light", with: 6
 
     click_on("Create Garden")
 
@@ -30,10 +31,10 @@ RSpec.describe 'As a logged in user' do
     fill_in "length_inches", with: 2
     fill_in "width_feet", with: 3
     fill_in "width_inches", with: 4
-    fill_in "zip_code", with: "80218"
+    fill_in "zip_code", with: "80503"
+    fill_in "light", with: 6
 
     click_on("Create Garden")
-
     click_on("Add plants to garden")
 
     expect(current_path).to eq("/gardens/1/plants/new")

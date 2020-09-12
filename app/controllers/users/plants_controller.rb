@@ -1,6 +1,8 @@
 class Users::PlantsController < ApplicationController
 
   def new
-    @plants = Plant.recommendations(zip, light).first(50)
+    @garden = Garden.find(params[:garden_id])
+    require"pry"; binding.pry
+    @plants = Plant.recommendations(@garden.zip_code, @garden.light)
   end
 end

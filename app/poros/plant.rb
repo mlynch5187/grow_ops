@@ -1,8 +1,8 @@
 class Plant
 
-  def recommendations(zip, light)
+  def self.recommendations(zip, light)
     ph = find_ph(zip)
-    TrefleService.filter(ph, light)
+    TrefleService.new.filter(ph, light)
   end
 
 
@@ -24,11 +24,11 @@ class Plant
     # @light = plant_info[:]
     # @ph_range = plant_info[:]
     # @days_to_harvest =plant_info[:]
-  end 
+  end
 
   private
 
-  def find_ph(zip)
-    GrowCallService.ph_conversion(zip)
+  def self.find_ph(zip)
+    GrowCallService.new.ph_conversion(zip)
   end
 end

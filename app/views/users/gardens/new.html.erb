@@ -16,8 +16,11 @@
   <%= label_tag :width_inches, 'Inches:' %>
   <%= number_field_tag :width_inches, nil, min: 1 %><br>
 
+  <%= label_tag :light, 'Estimated light (1-10):' %>
+  <%= number_field_tag :light, nil, min: 1, max: 10 %><br>
+
   <%= label_tag :zip_code, '5 Digit Zip Code:' %>
   <%= text_field_tag :zip_code %><br>
-  
+
   <%= submit_tag 'Create Garden', class: 'submit' %>
 <% end %>

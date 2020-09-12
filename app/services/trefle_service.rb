@@ -5,7 +5,7 @@ class TrefleService
     page_number = 1
       until plants.length > 50 do
       if ph == 0.0
-        response = conn.get("/api/v1/plants?token=#{ENV['TREFLE_ID']}&range[light]=#{light - 2},#{light + 2}&page=#{page_number}")
+        response = conn.get("/api/v1/plants?range[light]=#{light - 2},#{light + 2}&token=#{ENV['TREFLE_ID']}&page=#{page_number}")
         plants_info << JSON.parse(response.body, symbolize_names: true)
 
         plants_info[:data].each do |plant|

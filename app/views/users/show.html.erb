@@ -1,8 +1,14 @@
 <%= button_to "Create a new garden", "/users/gardens/new", method: :get%>
 <br>
-<% if current_user.gardens.any? %>
-  <% @gardens.each do |garden| %>
-    <%= garden.name %>
-    <%= link_to "Add plants to garden", "/users/gardens/#{garden.id}/plants/new"%><br>
+
+<div class='gardens'>
+  <% if current_user.gardens.any? %>
+    <% @gardens.each do |garden| %>
+      <section class="garden-<%= garden.id %>">
+        <%= garden.name %><br>
+        <%= link_to "Add plants to garden", "/users/gardens/#{garden.id}/plants/new"%><br>
+        <%= link_to "Delete Garden", "/dashboard", method: :delete %><br><br><br>
+      </section>
+    <% end %>
   <% end %>
-<% end %>
+</div>

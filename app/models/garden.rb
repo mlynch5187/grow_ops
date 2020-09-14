@@ -6,4 +6,8 @@ class Garden < ApplicationRecord
   validates :light, presence: true
 
   has_many :plants
+
+  def plot_size
+    length_cm * width_cm
+  end
 end

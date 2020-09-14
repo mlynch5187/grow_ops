@@ -26,12 +26,11 @@ class TrefleService
     plants
   end
 
-  def plant_details(plant_ids, garden)
-    @garden = Garden.find(garden)
+  def plant_details(plant_ids)
     plant_ids.map do |plant_id|
       individual_plant_response = conn.get("/api/v1/plants/#{plant_id.to_i}?token=#{ENV['TREFLE_ID']}")
       individual_plant_info = JSON.parse(individual_plant_response.body, symbolize_names: true)
-      Plant_object.new(individual_plant_info)
+      PlantObject.new(individual_plant_info)
     end
   end
 

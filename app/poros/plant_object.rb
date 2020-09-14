@@ -5,8 +5,8 @@ class PlantObject
     TrefleService.new.filter(ph, light)
   end
 
-  def self.plant_details(plants, garden)
-    TrefleService.new.plant_details(plants, garden)
+  def self.plant_details(plants)
+    TrefleService.new.plant_details(plants)
   end
 
   attr_reader :id,

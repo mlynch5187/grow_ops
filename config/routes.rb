@@ -9,11 +9,11 @@ Rails.application.routes.draw do
 
   namespace :users do
     resources :gardens do
-      resources :plants
+      get '/plants/plot', to: 'plants#plot'
+      put '/plants/increase', to: 'plants#increase'
+      put '/plants/decrease', to: 'plants#decrease'
+      resources :plants do
+      end
     end
   end
-
-
-
-
 end

@@ -7,4 +7,8 @@ class Garden < ApplicationRecord
 
   belongs_to :user
   has_many   :plants
+
+  def plot_size
+    length_cm * width_cm
+  end
 end

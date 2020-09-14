@@ -24,11 +24,13 @@ RSpec.describe 'As a logged in user' do
     within ".garden-#{@garden1.id}" do
       click_on "Delete Garden"
     end
+    expect(current_path).to eq("/dashboard")
     expect(page).to_not have_content(@garden1.name)
 
     within ".garden-#{@garden2.id}" do
       click_on "Delete Garden"
     end
+    expect(current_path).to eq("/dashboard")
     expect(page).to_not have_content(@garden2.name)
   end
 end

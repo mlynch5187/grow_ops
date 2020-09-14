@@ -22,12 +22,12 @@ RSpec.describe 'As a logged in user' do
     expect(page).to have_content(@garden4.name)
 
     within ".garden-#{@garden1.id}" do
-      expect(page).to have_link("Delete Garden")
+      click_on "Delete Garden"
     end
     expect(page).to_not have_content(@garden1.name)
 
     within ".garden-#{@garden2.id}" do
-      expect(page).to have_link("Delete Garden")
+      click_on "Delete Garden"
     end
     expect(page).to_not have_content(@garden2.name)
   end

@@ -7,7 +7,7 @@
       <section class="garden-<%= garden.id %>">
         <%= garden.name %><br>
         <%= link_to "Add plants to garden", "/users/gardens/#{garden.id}/plants/new"%><br>
-        <%= link_to "Delete Garden", "/dashboard", method: :delete %><br><br><br>
+        <%= link_to "Delete Garden", "/users/gardens/#{garden.id}", method: :delete %><br><br><br>
       </section>
     <% end %>
   <% end %>

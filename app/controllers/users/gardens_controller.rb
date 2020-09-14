@@ -14,6 +14,11 @@ class Users::GardensController < ApplicationController
     redirect_to "/dashboard"
   end
 
+  def destroy
+    Garden.destroy(params[:id])
+    redirect_to '/dashboard'
+  end
+
   private
 
   def garden_params

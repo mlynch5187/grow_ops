@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   namespace :users do
     resources :gardens do
+      get '/plants/plot', to: 'plants#plot'
       resources :plants
     end
   end

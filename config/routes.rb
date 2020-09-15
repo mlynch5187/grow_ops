@@ -8,6 +8,12 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'users#show'
 
   namespace :users do
-    resources :gardens
+    resources :gardens do
+      get '/plants/plot', to: 'plants#plot'
+      put '/plants/increase', to: 'plants#increase'
+      put '/plants/decrease', to: 'plants#decrease'
+      resources :plants do
+      end
+    end
   end
 end

@@ -14,7 +14,8 @@ RSpec.describe 'As a logged in user' do
     fill_in "length_inches", with: 2
     fill_in "width_feet", with: 3
     fill_in "width_inches", with: 4
-    fill_in "zip_code", with: "80218"
+    fill_in "zip_code", with: "80503"
+    fill_in "light", with: 6
 
     click_on("Create Garden")
 
@@ -23,4 +24,27 @@ RSpec.describe 'As a logged in user' do
     expect(page).to have_content("My new garden")
     expect(page).to have_link("Add plants to garden")
   end
-end 
+
+  it "can add plants to a new garden" do
+    fill_in "Name", with: "My new garden"
+    fill_in "length_feet", with: 1
+    fill_in "length_inches", with: 2
+    fill_in "width_feet", with: 3
+    fill_in "width_inches", with: 4
+    fill_in "zip_code", with: "80503"
+    fill_in "light", with: 6
+
+    click_on("Create Garden")
+    click_on("Add plants to garden")
+
+    garden = Garden.last
+
+    expect(current_path).to eq("/users/gardens/#{garden.id}/plants/new")
+
+    expect(page).to have_content("Choose your favorite plants to get started!")
+
+    expect(page).to have_css(".card")    
+
+    expect(page).to have_button("Create Garden")
+  end
+end

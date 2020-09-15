@@ -73,5 +73,7 @@ class Users::PlantsController < ApplicationController
     session[:plant_quantity] = nil
 
     redirect_to '/dashboard'
+
+    flash[:success] = "Garden has been created!"
   end
 end

@@ -23,8 +23,6 @@ class Users::PlantsController < ApplicationController
     @garden = Garden.find(params[:garden_id])
     @plants = PlantObject.plant_details(session[:plants])
     @size = session[:plot]
-    # create a final selection and add to db garden.plants.new
-    # delete plant session -- session[:plants].delete
   end
 
   def increase
@@ -47,5 +45,33 @@ class Users::PlantsController < ApplicationController
       flash[:error] = "You already have the maximum space for #{garden.name}!"
     end
     redirect_back(fallback_location: root_path)
+  end
+
+  def new_garden
+    garden = Garden.find(params[:garden_id])
+    plants = PlantObject.plant_details(session[:plants])
+    plants.each do |plant|
+      garden.plants.create(
+        trefle_id: plant.id,
+        name: plant.name,
+        row_spacing: plant.row_spacing,
+        spread: plant.spread,
+        edible: plant.edible,
+        image: plant.images[:flower][0][:image_url],
+        light: plant.light,
+        ph_min: plant.ph_min,
+        ph_max: plant.ph_max,
+        days_to_harvest: plant.days_to_harvest,
+        min_temp: plant.min_temp,
+        max_temp: plant.max_temp,
+        link_to_show_page: plant.link_to_show_page,
+        quantity: session[:plant_quantity][plant.id.to_s]
+      )
+    end
+    session[:plant] = nil
+    session[:plot] = nil
+    session[:plant_quantity] = nil
+
+    redirect_to '/dashboard'
   end
 end

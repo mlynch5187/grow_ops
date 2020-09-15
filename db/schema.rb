@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_14_194515) do
+ActiveRecord::Schema.define(version: 2020_09_15_194746) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,19 @@ ActiveRecord::Schema.define(version: 2020_09_14_194515) do
     t.bigint "garden_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "quantity"
+    t.integer "trefle_id"
+    t.integer "row_spacing"
+    t.integer "spread"
+    t.boolean "edible"
+    t.string "image"
+    t.integer "light"
+    t.float "ph_min"
+    t.float "ph_max"
+    t.integer "days_to_harvest"
+    t.integer "min_temp"
+    t.integer "max_temp"
+    t.string "link_to_show_page"
     t.index ["garden_id"], name: "index_plants_on_garden_id"
   end
 

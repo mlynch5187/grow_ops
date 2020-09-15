@@ -1,5 +1,5 @@
 <h4>We've randomly selected 50 plants that will grow in your garden</h4>
-<h3>Choose your favorite's to get started!</h3>
+<h3>Choose your favorite plants to get started!</h3>
 
 <%= form_tag("/users/gardens/#{@garden.id}/plants") do %>
   <% @plants.each do |plant| %>

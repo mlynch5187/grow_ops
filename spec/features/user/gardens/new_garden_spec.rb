@@ -37,9 +37,11 @@ RSpec.describe 'As a logged in user' do
     click_on("Create Garden")
     click_on("Add plants to garden")
 
-    expect(current_path).to eq("/gardens/1/plants/new")
+    garden = Garden.last
 
-    expect(page).to have_content("Recommended plants for your area:")
+    expect(current_path).to eq("/users/gardens/#{garden.id}/plants/new")
+
+    expect(page).to have_content("Choose your favorite plants to get started!")
 
     expect(page).to have_css(".plants")
 

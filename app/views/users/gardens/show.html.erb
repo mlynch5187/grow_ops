@@ -1,0 +1,7 @@
+<h4><%= @garden.name %></h4><br>
+<h4>Current Plants in Garden:</h4>
+
+<% @plants.each do |plant| %>
+  <img src="<%= plant.image %>" alt="<%= plant.name %>" style="width:200px;height:300px;"><br>
+  <%= link_to "#{plant.name}", "/users/gardens/#{@garden.id}/plants/#{plant.id}"%><br>
+<% end %>

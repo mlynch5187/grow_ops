@@ -4,12 +4,35 @@
 <h4>Plant Information</h4>
 <p>Minimum pH of Soil: <%= @plant.ph_min %></p>
 <p>Maximum pH of Soil: <%= @plant.ph_max %></p>
-<p>Average light Rating: <%= @plant.light %> lumens</p>
-<p>Minimum Temperature: <%= @plant.min_temp %></p>
-<p>Maximum Temperature: <%= @plant.max_temp %></p>
-<p>Growth Spread: <%= @plant.spread %></p>
-<p>Row Spacing: <%= @plant.row_spacing %></p>
-<p>Days to Harvest: <%= @plant.days_to_harvest %></p>
+
+<% if @plant.light < 3 %>
+  <p>Average light Rating: <%= @plant.light %> - Shady</p>
+<% elsif @plant.light >= 4 && @plant.light <= 7 %>
+  <p>Average light Rating: <%= @plant.light %> - Mostly Sunny</p>
+<% else @plant.light > 7 %>
+  <p>Average light Rating: <%= @plant.light %> - Very Sunny</p>
+<% end %>
+
+<% if @plant.min_temp == !nil %>
+  <p>Minimum Temperature: <%= @plant.min_temp %></p>
+<% end %>
+
+<% if @plant.max_temp == !nil %>
+  <p>Maximum Temperature: <%= @plant.max_temp %></p>
+<% end %>
+
+<% if @plant.spread == !nil %>
+  <p>Growth Spread: <%= @plant.spread %></p>
+<% end %>
+
+<% if @plant.row_spacing == !nil %>
+  <p>Row Spacing: <%= @plant.row_spacing %></p>
+<% end %>
+
+<% if @plant.days_to_harvest == !nil %>
+  <p>Days to Harvest: <%= @plant.days_to_harvest %></p>
+<% end %>
+
 <p>Edible: <%= @plant.edible %></p>
 <p>Images: </p>
 <img src="<%= @plant.image %>" alt="<%= @plant.name %>" style="width:200px;height:300px;">

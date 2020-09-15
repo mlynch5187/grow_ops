@@ -9,6 +9,14 @@ class PlantObject
     TrefleService.new.plant_details(plants)
   end
 
+  def increase_quantity
+    #pass 
+  end
+
+  def decrease_quantity
+
+  end
+
   attr_reader :id,
               :name,
               :row_spacing,
@@ -21,7 +29,8 @@ class PlantObject
               :days_to_harvest,
               :min_temp,
               :max_temp,
-              :link_to_show_page
+              :link_to_show_page,
+              :quantity
 
   def initialize(plant_info)
     @id = plant_info[:data][:main_species][:id]
@@ -37,6 +46,7 @@ class PlantObject
     @min_temp = plant_info[:data][:main_species][:growth][:minimum_temperature][:deg_f]
     @max_temp = plant_info[:data][:main_species][:growth][:maximum_temperature][:deg_f]
     @link_to_show_page = plant_info[:data][:main_species][:links][:self]
+    @quantity = 1
   end
 
   private

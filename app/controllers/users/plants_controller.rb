@@ -21,6 +21,7 @@ class Users::PlantsController < ApplicationController
   end
 
   def increase
+
     garden = Garden.find(params[:garden_id])
     unless session[:plot] <= 50
       session[:plot] -= 100
@@ -39,5 +40,4 @@ class Users::PlantsController < ApplicationController
     end
     redirect_back(fallback_location: root_path)
   end
-
 end

@@ -21,6 +21,7 @@ class Users::PlantsController < ApplicationController
   end
 
   def increase
+    garden = Garden.find(params[:garden_id])
     unless session[:plot] <= 50
       session[:plot] -= 100
     else
@@ -30,10 +31,11 @@ class Users::PlantsController < ApplicationController
   end
 
   def decrease
+    garden = Garden.find(params[:garden_id])
     unless session[:plot] == Garden.find(params[:garden_id]).plot_size
       session[:plot] += 100
     else
-      flash[:error] = "You have exceeded the maximum space for #{garden.name}!"
+      flash[:error] = "You already have the maximum space for #{garden.name}!"
     end
     redirect_back(fallback_location: root_path)
   end

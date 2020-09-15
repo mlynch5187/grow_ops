@@ -2382,3 +2382,113 @@ Processing by Users::GardensController#new as HTML
   Rendered users/gardens/new.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.0ms)
   [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "100000000000000000000"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."google_token" = $1 LIMIT $2[0m  [["google_token", "MOCK_OMNIAUTH_GOOGLE_TOKEN"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "google_token", "google_refresh_token", "created_at", "updated_at", "uid") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "john@example.com"], ["google_token", "MOCK_OMNIAUTH_GOOGLE_TOKEN"], ["google_refresh_token", "MOCK_OMNIAUTH_GOOGLE_REFRESH TOKEN"], ["created_at", "2020-09-15 16:17:50.226304"], ["updated_at", "2020-09-15 16:17:50.226304"], ["uid", "100000000000000000000"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/gardens/new" for 127.0.0.1 at 2020-09-15 10:17:50 -0600
+Processing by Users::GardensController#new as HTML
+  Rendering users/gardens/new.html.erb within layouts/application
+  Rendered users/gardens/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 190ms (Views: 175.7ms | ActiveRecord: 2.2ms)
+Started POST "/users/gardens" for 127.0.0.1 at 2020-09-15 10:17:50 -0600
+Processing by Users::GardensController#create as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"My new garden", "length_feet"=>"1", "length_inches"=>"2", "width_feet"=>"3", "width_inches"=>"4", "light"=>"6", "zip_code"=>"80503", "commit"=>"Create Garden"}
+Unpermitted parameters: :utf8, :commit
+Unpermitted parameters: :utf8, :commit
+Unpermitted parameters: :utf8, :commit
+Unpermitted parameters: :utf8, :commit
+Unpermitted parameters: :utf8, :commit
+Unpermitted parameters: :utf8, :commit
+Unpermitted parameters: :utf8, :commit
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGarden Create (0.8ms)[0m  [1m[32mINSERT INTO "gardens" ("name", "length_cm", "width_cm", "zip_code", "user_id", "created_at", "updated_at", "light") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "My new garden"], ["length_cm", 35], ["width_cm", 101], ["zip_code", "80503"], ["user_id", 63], ["created_at", "2020-09-15 16:17:50.478243"], ["updated_at", "2020-09-15 16:17:50.478243"], ["light", 6]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/dashboard
+Completed 302 Found in 13ms (ActiveRecord: 1.0ms)
+Started GET "/dashboard" for 127.0.0.1 at 2020-09-15 10:17:50 -0600
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mGarden Load (0.3ms)[0m  [1m[34mSELECT "gardens".* FROM "gardens"[0m
+  Rendered users/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 8ms (Views: 5.5ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "100000000000000000000"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."google_token" = $1 LIMIT $2[0m  [["google_token", "MOCK_OMNIAUTH_GOOGLE_TOKEN"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "google_token", "google_refresh_token", "created_at", "updated_at", "uid") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "john@example.com"], ["google_token", "MOCK_OMNIAUTH_GOOGLE_TOKEN"], ["google_refresh_token", "MOCK_OMNIAUTH_GOOGLE_REFRESH TOKEN"], ["created_at", "2020-09-15 16:17:50.596466"], ["updated_at", "2020-09-15 16:17:50.596466"], ["uid", "100000000000000000000"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/gardens/new" for 127.0.0.1 at 2020-09-15 10:17:50 -0600
+Processing by Users::GardensController#new as HTML
+  Rendering users/gardens/new.html.erb within layouts/application
+  Rendered users/gardens/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+Started POST "/users/gardens" for 127.0.0.1 at 2020-09-15 10:17:50 -0600
+Processing by Users::GardensController#create as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"My new garden", "length_feet"=>"1", "length_inches"=>"2", "width_feet"=>"3", "width_inches"=>"4", "light"=>"6", "zip_code"=>"80503", "commit"=>"Create Garden"}
+Unpermitted parameters: :utf8, :commit
+Unpermitted parameters: :utf8, :commit
+Unpermitted parameters: :utf8, :commit
+Unpermitted parameters: :utf8, :commit
+Unpermitted parameters: :utf8, :commit
+Unpermitted parameters: :utf8, :commit
+Unpermitted parameters: :utf8, :commit
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGarden Create (0.4ms)[0m  [1m[32mINSERT INTO "gardens" ("name", "length_cm", "width_cm", "zip_code", "user_id", "created_at", "updated_at", "light") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "My new garden"], ["length_cm", 35], ["width_cm", 101], ["zip_code", "80503"], ["user_id", 64], ["created_at", "2020-09-15 16:17:50.629866"], ["updated_at", "2020-09-15 16:17:50.629866"], ["light", 6]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/dashboard
+Completed 302 Found in 10ms (ActiveRecord: 0.6ms)
+Started GET "/dashboard" for 127.0.0.1 at 2020-09-15 10:17:50 -0600
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mGarden Load (0.2ms)[0m  [1m[34mSELECT "gardens".* FROM "gardens"[0m
+  Rendered users/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.2ms)
+Started GET "/users/gardens/34/plants/new" for 127.0.0.1 at 2020-09-15 10:17:50 -0600
+Processing by Users::PlantsController#new as HTML
+  Parameters: {"garden_id"=>"34"}
+  [1m[36mGarden Load (0.2ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  Rendering users/plants/new.html.erb within layouts/application
+  Rendered users/plants/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 4279ms (Views: 10.2ms | ActiveRecord: 0.3ms)
+  [1m[36mGarden Load (0.2ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" ORDER BY "gardens"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "100000000000000000000"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."google_token" = $1 LIMIT $2[0m  [["google_token", "MOCK_OMNIAUTH_GOOGLE_TOKEN"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "google_token", "google_refresh_token", "created_at", "updated_at", "uid") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "john@example.com"], ["google_token", "MOCK_OMNIAUTH_GOOGLE_TOKEN"], ["google_refresh_token", "MOCK_OMNIAUTH_GOOGLE_REFRESH TOKEN"], ["created_at", "2020-09-15 16:17:54.958282"], ["updated_at", "2020-09-15 16:17:54.958282"], ["uid", "100000000000000000000"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/dashboard" for 127.0.0.1 at 2020-09-15 10:17:54 -0600
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mGarden Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "gardens" WHERE "gardens"."user_id" = $1 LIMIT $2[0m  [["user_id", 65], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 6ms (Views: 3.5ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "100000000000000000000"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."google_token" = $1 LIMIT $2[0m  [["google_token", "MOCK_OMNIAUTH_GOOGLE_TOKEN"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "google_token", "google_refresh_token", "created_at", "updated_at", "uid") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "john@example.com"], ["google_token", "MOCK_OMNIAUTH_GOOGLE_TOKEN"], ["google_refresh_token", "MOCK_OMNIAUTH_GOOGLE_REFRESH TOKEN"], ["created_at", "2020-09-15 16:17:54.983113"], ["updated_at", "2020-09-15 16:17:54.983113"], ["uid", "100000000000000000000"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/dashboard" for 127.0.0.1 at 2020-09-15 10:17:54 -0600
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mGarden Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "gardens" WHERE "gardens"."user_id" = $1 LIMIT $2[0m  [["user_id", 66], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 7ms (Views: 4.2ms | ActiveRecord: 0.3ms)
+Started GET "/users/gardens/new" for 127.0.0.1 at 2020-09-15 10:17:55 -0600
+Processing by Users::GardensController#new as HTML
+  Rendering users/gardens/new.html.erb within layouts/application
+  Rendered users/gardens/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m

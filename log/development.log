@@ -3784,3 +3784,1334 @@ Migrating to RemoveTrefleIdFromPlants (20200914194515)
   ↳ bin/rails:9
   [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
+Started GET "/" for ::1 at 2020-09-15 10:19:29 -0600
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/michaelalexlynch/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (236.3ms)
+Completed 200 OK in 276ms (Views: 270.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/google_oauth2" for ::1 at 2020-09-15 10:19:38 -0600
+Started GET "/auth/google_oauth2" for ::1 at 2020-09-15 10:19:38 -0600
+Started GET "/auth/google_oauth2/callback?state=e930c5238b05e3f25cd37e7cdf17b27752ee6197228e6908&code=4%2F4AFymBs80_vRUMqtTVOiPQVU8mRQEAK0LkimpQlWANjAVY5_JGZHbyVMZ5jqOud22rj9YXeGTbWkFr9XsWpwqdY&scope=email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=consent" for ::1 at 2020-09-15 10:19:47 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"e930c5238b05e3f25cd37e7cdf17b27752ee6197228e6908", "code"=>"4/4AFymBs80_vRUMqtTVOiPQVU8mRQEAK0LkimpQlWANjAVY5_JGZHbyVMZ5jqOud22rj9YXeGTbWkFr9XsWpwqdY", "scope"=>"email https://www.googleapis.com/auth/userinfo.email openid", "authuser"=>"0", "prompt"=>"consent", "provider"=>"google_oauth2"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "111848931496290675316"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sessions_controller.rb:9
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mlynch5187@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["uid", "111848931496290675316"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."google_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["google_token", "ya29.a0AfH6SMDXkCLX6cZbh1gOT1jSLSdGYJzDf3DLZW5-6Gn908BkEJeUU5x-G1Q2QY5cIAMKgZp8_v40rEqew4b4qL15kOQjfwG1FJQeVUZYgfI3U0sCVWB8LuA373T6M33Y8weWGm3-qvU-nW3R3a8hMUx60SIKgOeT_Lk"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9
+  [1m[36mUser Update (7.3ms)[0m  [1m[33mUPDATE "users" SET "google_token" = $1, "google_refresh_token" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["google_token", "ya29.a0AfH6SMDXkCLX6cZbh1gOT1jSLSdGYJzDf3DLZW5-6Gn908BkEJeUU5x-G1Q2QY5cIAMKgZp8_v40rEqew4b4qL15kOQjfwG1FJQeVUZYgfI3U0sCVWB8LuA373T6M33Y8weWGm3-qvU-nW3R3a8hMUx60SIKgOeT_Lk"], ["google_refresh_token", "1//04GjexCcnf97nCgYIARAAGAQSNwF-L9Irf3Smp1Xwj2o1K4qV_915Jm4njkKJUpYNVjIXd7MU83KsQ_M2ts2RfnrP3hyVHaL3iDo"], ["updated_at", "2020-09-15 16:19:47.540572"], ["id", 1]]
+  ↳ app/controllers/sessions_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sessions_controller.rb:9
+Redirected to http://localhost:3000/dashboard
+Completed 302 Found in 31ms (ActiveRecord: 15.5ms)
+
+
+Started GET "/dashboard" for ::1 at 2020-09-15 10:19:47 -0600
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mGarden Exists (1.9ms)[0m  [1m[34mSELECT  1 AS one FROM "gardens" WHERE "gardens"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:3
+  [1m[36mGarden Load (0.2ms)[0m  [1m[34mSELECT "gardens".* FROM "gardens"[0m
+  ↳ app/views/users/show.html.erb:4
+  Rendered users/show.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 38ms (Views: 27.5ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/users/gardens/1/plants/new" for ::1 at 2020-09-15 10:19:57 -0600
+Processing by Users::PlantsController#new as HTML
+  Parameters: {"garden_id"=>"1"}
+  [1m[36mGarden Load (1.1ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:4
+Completed 500 Internal Server Error in 4407ms (ActiveRecord: 1.1ms)
+
+
+  
+NoMethodError (undefined method `-' for nil:NilClass):
+  
+app/services/trefle_service.rb:7:in `filter'
+app/poros/plant_object.rb:5:in `recommendations'
+app/controllers/users/plants_controller.rb:5:in `new'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (43.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "grow_ops_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (34.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "grow_ops_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (147.0ms)[0m  [1m[35mCREATE DATABASE "grow_ops_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (61.4ms)[0m  [1m[35mCREATE DATABASE "grow_ops_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "gardens" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "gardens" ("id" bigserial primary key, "name" character varying, "length_cm" integer, "width_cm" integer, "zip_code" character varying, "user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "light" integer)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_gardens_on_user_id" ON "gardens"  ("user_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "plants" CASCADE[0m
+  ↳ db/schema.rb:30
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "plants" ("id" bigserial primary key, "name" character varying, "garden_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:30
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_plants_on_garden_id" ON "plants"  ("garden_id")[0m
+  ↳ db/schema.rb:30
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:38
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying, "google_token" character varying, "google_refresh_token" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "uid" character varying)[0m
+  ↳ db/schema.rb:38
+  [1m[35m (2.5ms)[0m  [1m[35mALTER TABLE "gardens" ADD CONSTRAINT "fk_rails_77bde72150"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:47
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "plants" ADD CONSTRAINT "fk_rails_2c5194e718"
+FOREIGN KEY ("garden_id")
+  REFERENCES "gardens" ("id")
+[0m
+  ↳ db/schema.rb:48
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200914194515)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200909224501),
+(20200912191559),
+(20200909221248),
+(20200910174913),
+(20200910175143);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-09-15 16:21:37.615523"], ["updated_at", "2020-09-15 16:21:37.615523"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "gardens" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (8.6ms)[0m  [1m[35mCREATE TABLE "gardens" ("id" bigserial primary key, "name" character varying, "length_cm" integer, "width_cm" integer, "zip_code" character varying, "user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "light" integer)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX  "index_gardens_on_user_id" ON "gardens"  ("user_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "plants" CASCADE[0m
+  ↳ db/schema.rb:30
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "plants" ("id" bigserial primary key, "name" character varying, "garden_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:30
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_plants_on_garden_id" ON "plants"  ("garden_id")[0m
+  ↳ db/schema.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:38
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying, "google_token" character varying, "google_refresh_token" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "uid" character varying)[0m
+  ↳ db/schema.rb:38
+  [1m[35m (1.9ms)[0m  [1m[35mALTER TABLE "gardens" ADD CONSTRAINT "fk_rails_77bde72150"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:47
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "plants" ADD CONSTRAINT "fk_rails_2c5194e718"
+FOREIGN KEY ("garden_id")
+  REFERENCES "gardens" ("id")
+[0m
+  ↳ db/schema.rb:48
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200914194515)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200909224501),
+(20200912191559),
+(20200909221248),
+(20200910174913),
+(20200910175143);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-09-15 16:21:37.677956"], ["updated_at", "2020-09-15 16:21:37.677956"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.2ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2020-09-15 16:21:37.680833"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2020-09-15 10:21:55 -0600
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/michaelalexlynch/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (192.5ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 500 Internal Server Error in 236ms (ActiveRecord: 5.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=1):
+  
+app/controllers/application_controller.rb:7:in `current_user'
+app/views/layouts/application.html.erb:13:in `_app_views_layouts_application_html_erb___4213822070543234279_70324792399920'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6635044171743363600)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(6635044171743363600)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2020-09-15 10:22:48 -0600
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/michaelalexlynch/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (209.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 500 Internal Server Error in 260ms (ActiveRecord: 4.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=1):
+  
+app/controllers/application_controller.rb:7:in `current_user'
+app/views/layouts/application.html.erb:13:in `_app_views_layouts_application_html_erb__3928839030418214583_70323806982100'
+Started GET "/" for ::1 at 2020-09-15 10:22:55 -0600
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=1):
+  
+app/controllers/application_controller.rb:7:in `current_user'
+app/views/layouts/application.html.erb:13:in `_app_views_layouts_application_html_erb__3928839030418214583_70323797786220'
+Started GET "/" for ::1 at 2020-09-15 10:23:04 -0600
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=1):
+  
+app/controllers/application_controller.rb:7:in `current_user'
+app/views/layouts/application.html.erb:13:in `_app_views_layouts_application_html_erb__3928839030418214583_70323824283660'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (34.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "grow_ops_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (29.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "grow_ops_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (64.9ms)[0m  [1m[35mCREATE DATABASE "grow_ops_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (63.3ms)[0m  [1m[35mCREATE DATABASE "grow_ops_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6635044171743363600)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20200909221248)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying, "google_token" character varying, "google_refresh_token" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200909221248_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200909221248"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddUidToUsers (20200909224501)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "uid" character varying[0m
+  ↳ db/migrate/20200909224501_add_uid_to_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200909224501"]]
+  ↳ bin/rails:9
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateGardens (20200910174913)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "gardens" ("id" bigserial primary key, "name" character varying, "length_cm" integer, "width_cm" integer, "zip_code" character varying, "user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_77bde72150"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  ↳ db/migrate/20200910174913_create_gardens.rb:3
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX  "index_gardens_on_user_id" ON "gardens"  ("user_id")[0m
+  ↳ db/migrate/20200910174913_create_gardens.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200910174913"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreatePlants (20200910175143)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "plants" ("id" bigserial primary key, "name" character varying, "trefle_id" integer, "garden_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_2c5194e718"
+FOREIGN KEY ("garden_id")
+  REFERENCES "gardens" ("id")
+)[0m
+  ↳ db/migrate/20200910175143_create_plants.rb:3
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX  "index_plants_on_garden_id" ON "plants"  ("garden_id")[0m
+  ↳ db/migrate/20200910175143_create_plants.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200910175143"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddLightToGardens (20200912191559)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "gardens" ADD "light" integer[0m
+  ↳ db/migrate/20200912191559_add_light_to_gardens.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200912191559"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to RemoveTrefleIdFromPlants (20200914194515)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "plants" DROP COLUMN "trefle_id"[0m
+  ↳ db/migrate/20200914194515_remove_trefle_id_from_plants.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200914194515"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-09-15 16:23:40.864862"], ["updated_at", "2020-09-15 16:23:40.864862"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(6635044171743363600)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2020-09-15 10:24:08 -0600
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/michaelalexlynch/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (196.2ms)
+Completed 200 OK in 221ms (Views: 215.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/google_oauth2" for ::1 at 2020-09-15 10:24:12 -0600
+Started GET "/auth/google_oauth2" for ::1 at 2020-09-15 10:24:13 -0600
+Started GET "/auth/google_oauth2/callback?state=afec8fbf54455047bc64187dc7d294bbbff499ae8cf75300&code=4%2F4AGohurWHoW6DUPA4eW3LITWcQkWgzRAiGyTtEtdb-OOa-QONDJY5Cs8wRocpPQnnMW3ZBZVMiawp6lRTF4hM34&scope=email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=consent" for ::1 at 2020-09-15 10:24:23 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"afec8fbf54455047bc64187dc7d294bbbff499ae8cf75300", "code"=>"4/4AGohurWHoW6DUPA4eW3LITWcQkWgzRAiGyTtEtdb-OOa-QONDJY5Cs8wRocpPQnnMW3ZBZVMiawp6lRTF4hM34", "scope"=>"email https://www.googleapis.com/auth/userinfo.email openid", "authuser"=>"0", "prompt"=>"consent", "provider"=>"google_oauth2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "111848931496290675316"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:12
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mlynch5187@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "111848931496290675316"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."google_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/user.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sessions_controller.rb:9
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mlynch5187@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "111848931496290675316"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."google_token" = $1 LIMIT $2[0m  [["google_token", "ya29.a0AfH6SMAgXKFm7O0Ld6lfwe8_2I_LB0kaMou8nsgUCUdgQvWR1w4Ck3YSYgVbeTCYtik_8arOCzxstkJh-KSbK02PqbCLT1obSv00zS84Nf9IPnzqV-73coyTN3BxzZt9TT_of8bNDTdn6lp9ELAXIbxjfD0WJ-2LdJk"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "google_token", "google_refresh_token", "created_at", "updated_at", "uid") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "mlynch5187@gmail.com"], ["google_token", "ya29.a0AfH6SMAgXKFm7O0Ld6lfwe8_2I_LB0kaMou8nsgUCUdgQvWR1w4Ck3YSYgVbeTCYtik_8arOCzxstkJh-KSbK02PqbCLT1obSv00zS84Nf9IPnzqV-73coyTN3BxzZt9TT_of8bNDTdn6lp9ELAXIbxjfD0WJ-2LdJk"], ["google_refresh_token", "1//04NBvTlQ-088YCgYIARAAGAQSNwF-L9IrlqsrBNMsB1dmJfCBaOOOCrfYiGCpZoRA08VVxqBQN954H1hyKL6NWkZ0JhoUWDYaCGk"], ["created_at", "2020-09-15 16:24:23.767784"], ["updated_at", "2020-09-15 16:24:23.767784"], ["uid", "111848931496290675316"]]
+  ↳ app/controllers/sessions_controller.rb:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sessions_controller.rb:9
+Redirected to http://localhost:3000/dashboard
+Completed 302 Found in 91ms (ActiveRecord: 8.1ms)
+
+
+Started GET "/dashboard" for ::1 at 2020-09-15 10:24:23 -0600
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mGarden Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "gardens" WHERE "gardens"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:3
+  Rendered users/show.html.erb within layouts/application (26.7ms)
+Completed 200 OK in 48ms (Views: 41.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users/gardens/new" for ::1 at 2020-09-15 10:24:26 -0600
+Processing by Users::GardensController#new as HTML
+  Rendering users/gardens/new.html.erb within layouts/application
+  Rendered users/gardens/new.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 25ms (Views: 14.7ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/users/gardens" for ::1 at 2020-09-15 10:25:00 -0600
+Processing by Users::GardensController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XreD/vKz4d+7bJkFrByhaLnQqJ8TzE5h1ItoOGkOiZAdVlVV/BBKJAxxaExXHL6e468a/KYWo6q12/L9loIMoA==", "name"=>"Alex's Amazing Arboreum", "length_feet"=>"5", "length_inches"=>"6", "width_feet"=>"5", "width_inches"=>"6", "light"=>"7", "zip_code"=>"80001", "commit"=>"Create Garden"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Unpermitted parameters: :utf8, :authenticity_token, :commit
+Unpermitted parameters: :utf8, :authenticity_token, :commit
+Unpermitted parameters: :utf8, :authenticity_token, :commit
+Unpermitted parameters: :utf8, :authenticity_token, :commit
+Unpermitted parameters: :utf8, :authenticity_token, :commit
+Unpermitted parameters: :utf8, :authenticity_token, :commit
+Unpermitted parameters: :utf8, :authenticity_token, :commit
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users/gardens_controller.rb:7
+  [1m[36mGarden Create (0.7ms)[0m  [1m[32mINSERT INTO "gardens" ("name", "length_cm", "width_cm", "zip_code", "user_id", "created_at", "updated_at", "light") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Alex's Amazing Arboreum"], ["length_cm", 167], ["width_cm", 167], ["zip_code", "80001"], ["user_id", 1], ["created_at", "2020-09-15 16:25:00.834116"], ["updated_at", "2020-09-15 16:25:00.834116"], ["light", 7]]
+  ↳ app/controllers/users/gardens_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users/gardens_controller.rb:7
+Redirected to http://localhost:3000/dashboard
+Completed 302 Found in 6ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/dashboard" for ::1 at 2020-09-15 10:25:00 -0600
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mGarden Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "gardens" WHERE "gardens"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:3
+  [1m[36mGarden Load (0.2ms)[0m  [1m[34mSELECT "gardens".* FROM "gardens"[0m
+  ↳ app/views/users/show.html.erb:4
+  Rendered users/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 19ms (Views: 16.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/gardens/1/plants/new" for ::1 at 2020-09-15 10:25:03 -0600
+Processing by Users::PlantsController#new as HTML
+  Parameters: {"garden_id"=>"1"}
+  [1m[36mGarden Load (0.3ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:4
+  Rendering users/plants/new.html.erb within layouts/application
+  Rendered users/plants/new.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 5508ms (Views: 16.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/users/gardens/1/plants" for ::1 at 2020-09-15 10:25:43 -0600
+Processing by Users::PlantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"O45v6TRt7g9/J9ZkuF4M71EmVzkFFRa84iES/cSnM9kPvvogLMkK1Mw6w/uqqhMmt8iar0KgL7o+vJ1pUS9ckA==", "plant"=>["167892", "186403", "139820", "167361"], "commit"=>"Create Garden", "garden_id"=>"1"}
+  [1m[36mGarden Load (0.3ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:9
+Redirected to http://localhost:3000/users/gardens/1/plants/plot
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/users/gardens/1/plants/plot" for ::1 at 2020-09-15 10:25:43 -0600
+Processing by Users::PlantsController#plot as HTML
+  Parameters: {"garden_id"=>"1"}
+  [1m[36mGarden Load (0.3ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:16
+  Rendering users/plants/plot.html.erb within layouts/application
+  Rendered users/plants/plot.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 2834ms (Views: 14.8ms | ActiveRecord: 0.6ms)
+
+
+Started PUT "/users/gardens/1/plants/increase" for ::1 at 2020-09-15 10:25:51 -0600
+Processing by Users::PlantsController#increase as HTML
+  Parameters: {"authenticity_token"=>"hrVpvXz7jpelPXaBOce6qMlGp8d9JFju5qHJCrGglUnFVL8WclglbBIgh8jCx6VekzkVpMj+tSWH8VPPTiwQeQ==", "garden_id"=>"1"}
+Redirected to http://localhost:3000/users/gardens/1/plants/plot
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/gardens/1/plants/plot" for ::1 at 2020-09-15 10:25:51 -0600
+Processing by Users::PlantsController#plot as HTML
+  Parameters: {"garden_id"=>"1"}
+  [1m[36mGarden Load (0.2ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:16
+  Rendering users/plants/plot.html.erb within layouts/application
+  Rendered users/plants/plot.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 2834ms (Views: 16.8ms | ActiveRecord: 0.4ms)
+
+
+Started PUT "/users/gardens/1/plants/increase" for ::1 at 2020-09-15 10:25:56 -0600
+Processing by Users::PlantsController#increase as HTML
+  Parameters: {"authenticity_token"=>"RtHmBG3leEi+pq7cw2L/UkpSLr0IjqFmAIIitMWgl7kFMDCvY0bTswm7X5U4YuCkEC2c3r1UTK1h0rhxOiwSiQ==", "garden_id"=>"1"}
+Redirected to http://localhost:3000/users/gardens/1/plants/plot
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/gardens/1/plants/plot" for ::1 at 2020-09-15 10:25:56 -0600
+Processing by Users::PlantsController#plot as HTML
+  Parameters: {"garden_id"=>"1"}
+  [1m[36mGarden Load (0.2ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:16
+  Rendering users/plants/plot.html.erb within layouts/application
+  Rendered users/plants/plot.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 3338ms (Views: 13.8ms | ActiveRecord: 0.4ms)
+
+
+Started PUT "/users/gardens/1/plants/increase" for ::1 at 2020-09-15 10:26:13 -0600
+Processing by Users::PlantsController#increase as HTML
+  Parameters: {"authenticity_token"=>"y4/+Ceqij3K0Jyefb9zWKXfLnnQNvgQSJWISAMxFv26Ibiii5AEkiQM61taU3MnfLbQsF7hk6dlEMojFM8k6Xg==", "garden_id"=>"1"}
+Redirected to http://localhost:3000/users/gardens/1/plants/plot
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/gardens/1/plants/plot" for ::1 at 2020-09-15 10:26:13 -0600
+Processing by Users::PlantsController#plot as HTML
+  Parameters: {"garden_id"=>"1"}
+  [1m[36mGarden Load (0.2ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:16
+  Rendering users/plants/plot.html.erb within layouts/application
+  Rendered users/plants/plot.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 2805ms (Views: 13.2ms | ActiveRecord: 0.5ms)
+
+
+Started PUT "/users/gardens/1/plants/increase" for ::1 at 2020-09-15 10:26:25 -0600
+Processing by Users::PlantsController#increase as HTML
+  Parameters: {"authenticity_token"=>"qDQVUgjP4y9FWeuKhD3ug1nbAiSSgKoFt2IjQnoV4tXr1cP5BmxI1PJEGsN/PfF1A6SwRydaR87WMrmHhZln5Q==", "garden_id"=>"1"}
+Redirected to http://localhost:3000/users/gardens/1/plants/plot
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/gardens/1/plants/plot" for ::1 at 2020-09-15 10:26:25 -0600
+Processing by Users::PlantsController#plot as HTML
+  Parameters: {"garden_id"=>"1"}
+  [1m[36mGarden Load (0.5ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:16
+  Rendering users/plants/plot.html.erb within layouts/application
+  Rendered users/plants/plot.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 2887ms (Views: 16.2ms | ActiveRecord: 0.8ms)
+
+
+Started PUT "/users/gardens/1/plants/decrease" for ::1 at 2020-09-15 10:26:34 -0600
+Processing by Users::PlantsController#decrease as HTML
+  Parameters: {"authenticity_token"=>"L5wQrO+gB7yM2rIUW91f/GUQcPkPnr6W1lVKsOQYoahsfcYH4QOsRzvHQ12g3UAKP2/CmrpEU123BdB1G5QkmA==", "garden_id"=>"1"}
+  [1m[36mGarden Load (0.2ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:33
+Redirected to http://localhost:3000/users/gardens/1/plants/plot
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/gardens/1/plants/plot" for ::1 at 2020-09-15 10:26:34 -0600
+Processing by Users::PlantsController#plot as HTML
+  Parameters: {"garden_id"=>"1"}
+  [1m[36mGarden Load (0.2ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:16
+  Rendering users/plants/plot.html.erb within layouts/application
+  Rendered users/plants/plot.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 2945ms (Views: 14.4ms | ActiveRecord: 0.4ms)
+
+
+Started PUT "/users/gardens/1/plants/decrease" for ::1 at 2020-09-15 10:26:39 -0600
+Processing by Users::PlantsController#decrease as HTML
+  Parameters: {"authenticity_token"=>"/9/DsnnN1QBXypXSac/nqXTVZ30beG1gj/n3E3M7lZ28PhUZd25+++DXZJuSz/hfLqrVHq6igKvuqW3WjLcQrQ==", "garden_id"=>"1"}
+  [1m[36mGarden Load (0.2ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:33
+Redirected to http://localhost:3000/users/gardens/1/plants/plot
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/gardens/1/plants/plot" for ::1 at 2020-09-15 10:26:39 -0600
+Processing by Users::PlantsController#plot as HTML
+  Parameters: {"garden_id"=>"1"}
+  [1m[36mGarden Load (0.3ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:16
+  Rendering users/plants/plot.html.erb within layouts/application
+  Rendered users/plants/plot.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 2851ms (Views: 14.2ms | ActiveRecord: 0.5ms)
+
+
+Started PUT "/users/gardens/1/plants/decrease" for ::1 at 2020-09-15 10:26:43 -0600
+Processing by Users::PlantsController#decrease as HTML
+  Parameters: {"authenticity_token"=>"duMcv74L3pjoKN4K5EzhyoTHwKTu+rPNQNozgBNoqGk1AsoUsKh1Y181L0MfTP483rhyx1sgXgYhiqlF7OQtWQ==", "garden_id"=>"1"}
+  [1m[36mGarden Load (0.2ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:33
+Redirected to http://localhost:3000/users/gardens/1/plants/plot
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/gardens/1/plants/plot" for ::1 at 2020-09-15 10:26:43 -0600
+Processing by Users::PlantsController#plot as HTML
+  Parameters: {"garden_id"=>"1"}
+  [1m[36mGarden Load (0.2ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:16
+  Rendering users/plants/plot.html.erb within layouts/application
+  Rendered users/plants/plot.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 2867ms (Views: 13.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/gardens/1/plants/plot" for ::1 at 2020-09-15 10:27:41 -0600
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/michaelalexlynch/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Users::PlantsController#plot as HTML
+  Parameters: {"garden_id"=>"1"}
+  [1m[36mGarden Load (0.4ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:16
+  Rendering users/plants/plot.html.erb within layouts/application
+Started GET "/users/gardens/1/plants/plot" for ::1 at 2020-09-15 10:27:44 -0600
+Processing by Users::PlantsController#plot as HTML
+  Parameters: {"garden_id"=>"1"}
+  [1m[36mGarden Load (0.4ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:16
+  Rendering users/plants/plot.html.erb within layouts/application
+Started GET "/users/gardens/1/plants/plot" for ::1 at 2020-09-15 10:30:05 -0600
+Processing by Users::PlantsController#plot as HTML
+  Parameters: {"garden_id"=>"1"}
+  [1m[36mGarden Load (0.9ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:16
+  Rendering users/plants/plot.html.erb within layouts/application
+Started GET "/users/gardens/1/plants/plot" for ::1 at 2020-09-15 10:45:50 -0600
+Processing by Users::PlantsController#plot as HTML
+  Parameters: {"garden_id"=>"1"}
+  [1m[36mGarden Load (0.4ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:16
+  Rendering users/plants/plot.html.erb within layouts/application
+  Rendered users/plants/plot.html.erb within layouts/application (137833.7ms)
+Completed 500 Internal Server Error in 141060ms (ActiveRecord: 0.6ms)
+
+
+  
+SystemExit (exit):
+  
+app/views/users/plants/plot.html.erb:8:in `block in _app_views_users_plants_plot_html_erb__4257916772923308888_70182077059040'
+app/views/users/plants/plot.html.erb:6:in `each'
+app/views/users/plants/plot.html.erb:6:in `_app_views_users_plants_plot_html_erb__4257916772923308888_70182077059040'
+Started GET "/users/gardens/1/plants/plot" for ::1 at 2020-09-15 10:48:17 -0600
+Processing by Users::PlantsController#plot as HTML
+  Parameters: {"garden_id"=>"1"}
+  [1m[36mGarden Load (1.0ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:16
+  Rendering users/plants/plot.html.erb within layouts/application
+  Rendered users/plants/plot.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 3081ms (ActiveRecord: 1.0ms)
+
+
+  
+SyntaxError (/Users/michaelalexlynch/turing/3.5module/projects/grow_ops/app/views/users/plants/plot.html.erb:9: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+...:flower].first[:image_url]" alt="#{plant.name}"
+...                            ^~~
+/Users/michaelalexlynch/turing/3.5module/projects/grow_ops/app/views/users/plants/plot.html.erb:15: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/users/plants/plot.html.erb:9: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+app/views/users/plants/plot.html.erb:15: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/users/gardens/1/plants/plot" for ::1 at 2020-09-15 10:49:46 -0600
+Processing by Users::PlantsController#plot as HTML
+  Parameters: {"garden_id"=>"1"}
+  [1m[36mGarden Load (0.4ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:16
+  Rendering users/plants/plot.html.erb within layouts/application
+  Rendered users/plants/plot.html.erb within layouts/application (8599.7ms)
+Completed 500 Internal Server Error in 12586ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+     6: <% @plants.each do |plant| %>
+     7:   <%= plant.name %>
+     8:   <% require "pry"; binding.pry %>
+     9:   <img src="<%= plant.images[:flower].first[:image_url] %>" alt="<%= plant.name %>" style="width:200px;height:300px;"><br>
+    10: 
+    11:   <%= link_to "Increase Amount", "/users/gardens/#{@garden.id}/plants/increase", method: :put %>
+    12:   <%= link_to "Decrease Amount", "/users/gardens/#{@garden.id}/plants/decrease", method: :put %><br>
+  
+app/views/users/plants/plot.html.erb:9:in `block in _app_views_users_plants_plot_html_erb__4257916772923308888_70182012338440'
+app/views/users/plants/plot.html.erb:6:in `each'
+app/views/users/plants/plot.html.erb:6:in `_app_views_users_plants_plot_html_erb__4257916772923308888_70182012338440'
+Started GET "/users/gardens/1/plants/plot" for ::1 at 2020-09-15 10:50:21 -0600
+Processing by Users::PlantsController#plot as HTML
+  Parameters: {"garden_id"=>"1"}
+  [1m[36mGarden Load (0.4ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:16
+  Rendering users/plants/plot.html.erb within layouts/application
+  Rendered users/plants/plot.html.erb within layouts/application (10.1ms)
+Completed 500 Internal Server Error in 2926ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+     5: 
+     6: <% @plants.each do |plant| %>
+     7:   <%= plant.name %>
+     8:   <img src="<%= plant.images[:flower].first[:image_url] %>" alt="<%= plant.name %>" style="width:200px;height:300px;"><br>
+     9: 
+    10:   <%= link_to "Increase Amount", "/users/gardens/#{@garden.id}/plants/increase", method: :put %>
+    11:   <%= link_to "Decrease Amount", "/users/gardens/#{@garden.id}/plants/decrease", method: :put %><br>
+  
+app/views/users/plants/plot.html.erb:8:in `block in _app_views_users_plants_plot_html_erb__4257916772923308888_70182011046660'
+app/views/users/plants/plot.html.erb:6:in `each'
+app/views/users/plants/plot.html.erb:6:in `_app_views_users_plants_plot_html_erb__4257916772923308888_70182011046660'
+Started GET "/users/gardens/1/plants/plot" for ::1 at 2020-09-15 10:51:03 -0600
+Processing by Users::PlantsController#plot as HTML
+  Parameters: {"garden_id"=>"1"}
+  [1m[36mGarden Load (0.6ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:16
+  Rendering users/plants/plot.html.erb within layouts/application
+  Rendered users/plants/plot.html.erb within layouts/application (138755.7ms)
+Completed 500 Internal Server Error in 141657ms (ActiveRecord: 0.6ms)
+
+
+  
+SystemExit (exit):
+  
+app/views/users/plants/plot.html.erb:8:in `block in _app_views_users_plants_plot_html_erb__4257916772923308888_70182060082420'
+app/views/users/plants/plot.html.erb:6:in `each'
+app/views/users/plants/plot.html.erb:6:in `_app_views_users_plants_plot_html_erb__4257916772923308888_70182060082420'
+Started GET "/users/gardens/1/plants/plot" for ::1 at 2020-09-15 10:53:31 -0600
+Processing by Users::PlantsController#plot as HTML
+  Parameters: {"garden_id"=>"1"}
+  [1m[36mGarden Load (0.7ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:16
+  Rendering users/plants/plot.html.erb within layouts/application
+  Rendered users/plants/plot.html.erb within layouts/application (7717.1ms)
+Completed 500 Internal Server Error in 10750ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+     6: <% @plants.each do |plant| %>
+     7:   <%= plant.name %>
+     8:   <% require "pry"; binding.pry %>
+     9:   <img src=<%= plant.images[:flower].first[:image_url] %> alt="<%= plant.name %>" style="width:200px;height:300px;"><br>
+    10: 
+    11:   <%= link_to "Increase Amount", "/users/gardens/#{@garden.id}/plants/increase", method: :put %>
+    12:   <%= link_to "Decrease Amount", "/users/gardens/#{@garden.id}/plants/decrease", method: :put %><br>
+  
+app/views/users/plants/plot.html.erb:9:in `block in _app_views_users_plants_plot_html_erb__4257916772923308888_70182011066280'
+app/views/users/plants/plot.html.erb:6:in `each'
+app/views/users/plants/plot.html.erb:6:in `_app_views_users_plants_plot_html_erb__4257916772923308888_70182011066280'
+Started GET "/users/gardens/1/plants/plot" for ::1 at 2020-09-15 10:53:58 -0600
+Processing by Users::PlantsController#plot as HTML
+  Parameters: {"garden_id"=>"1"}
+  [1m[36mGarden Load (0.6ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:16
+  Rendering users/plants/plot.html.erb within layouts/application
+  Rendered users/plants/plot.html.erb within layouts/application (4072.5ms)
+Completed 500 Internal Server Error in 7838ms (ActiveRecord: 0.6ms)
+
+
+  
+SystemExit (exit):
+  
+app/views/users/plants/plot.html.erb:8:in `block in _app_views_users_plants_plot_html_erb__4257916772923308888_70182077303440'
+app/views/users/plants/plot.html.erb:6:in `each'
+app/views/users/plants/plot.html.erb:6:in `_app_views_users_plants_plot_html_erb__4257916772923308888_70182077303440'
+Started GET "/users/gardens/1/plants/plot" for ::1 at 2020-09-15 10:54:29 -0600
+Processing by Users::PlantsController#plot as HTML
+  Parameters: {"garden_id"=>"1"}
+  [1m[36mGarden Load (0.4ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:16
+  Rendering users/plants/plot.html.erb within layouts/application
+  Rendered users/plants/plot.html.erb within layouts/application (2800.4ms)
+Completed 500 Internal Server Error in 5709ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+     6: <% @plants.each do |plant| %>
+     7:   <%= plant.name %>
+     8:   <% require "pry"; binding.pry %>
+     9:   <img src="<%= plant.images[:flower].first[:image_url] %>" alt="<%= plant.name %>" style="width:200px;height:300px;"><br>
+    10: 
+    11:   <%= link_to "Increase Amount", "/users/gardens/#{@garden.id}/plants/increase", method: :put %>
+    12:   <%= link_to "Decrease Amount", "/users/gardens/#{@garden.id}/plants/decrease", method: :put %><br>
+  
+app/views/users/plants/plot.html.erb:9:in `block in _app_views_users_plants_plot_html_erb__4257916772923308888_70182013064080'
+app/views/users/plants/plot.html.erb:6:in `each'
+app/views/users/plants/plot.html.erb:6:in `_app_views_users_plants_plot_html_erb__4257916772923308888_70182013064080'
+Started GET "/" for ::1 at 2020-09-15 10:54:59 -0600
+  Rendered users/plants/plot.html.erb within layouts/application (1512461.0ms)
+Completed 500 Internal Server Error in 1515616ms (ActiveRecord: 1.2ms)
+
+
+  
+SystemExit (exit):
+  
+app/views/users/plants/plot.html.erb:8:in `block in _app_views_users_plants_plot_html_erb__4257916772923308888_70182062395060'
+app/views/users/plants/plot.html.erb:6:in `each'
+app/views/users/plants/plot.html.erb:6:in `_app_views_users_plants_plot_html_erb__4257916772923308888_70182062395060'
+  Rendered users/plants/plot.html.erb within layouts/application (1669624.4ms)
+Completed 500 Internal Server Error in 1672451ms (ActiveRecord: 0.6ms)
+
+
+  
+SystemExit (exit):
+  
+app/views/users/plants/plot.html.erb:8:in `block in _app_views_users_plants_plot_html_erb__4257916772923308888_70182061998920'
+app/views/users/plants/plot.html.erb:6:in `each'
+app/views/users/plants/plot.html.erb:6:in `_app_views_users_plants_plot_html_erb__4257916772923308888_70182061998920'
+  Rendered users/plants/plot.html.erb within layouts/application (1702575.1ms)
+Completed 500 Internal Server Error in 1705601ms (ActiveRecord: 4.4ms)
+
+
+  
+SystemExit (exit):
+  
+app/views/users/plants/plot.html.erb:8:in `block in _app_views_users_plants_plot_html_erb__4257916772923308888_70182077944980'
+app/views/users/plants/plot.html.erb:6:in `each'
+app/views/users/plants/plot.html.erb:6:in `_app_views_users_plants_plot_html_erb__4257916772923308888_70182077944980'
+Processing by WelcomeController#index as HTML
+Started GET "/" for ::1 at 2020-09-15 10:56:07 -0600
+Started GET "/" for ::1 at 2020-09-15 10:56:07 -0600
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (31.3ms)
+  Rendered welcome/index.html.erb within layouts/application (242.0ms)
+  Rendered welcome/index.html.erb within layouts/application (34.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (8.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 319ms (Views: 310.1ms | ActiveRecord: 6.7ms)
+
+
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 109ms (Views: 91.4ms | ActiveRecord: 15.5ms)
+
+
+Completed 200 OK in 314ms (Views: 304.3ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/auth/google_oauth2" for ::1 at 2020-09-15 10:56:24 -0600
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/michaelalexlynch/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Started GET "/auth/google_oauth2" for ::1 at 2020-09-15 10:56:24 -0600
+Started GET "/auth/google_oauth2/callback?state=0a2048f403b1b52e23a2e013eab5ed2cbc1f9878480edecd&code=4%2F4AEEWpIYdyqCsQbHyHFOmYMgi84B1TkK1L6M58nj8HI2A7Vbew_LLpJ2C71NNiUc-odxqwpGWlSbXIV6Zp_wfZc&scope=email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=consent" for ::1 at 2020-09-15 10:56:27 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"0a2048f403b1b52e23a2e013eab5ed2cbc1f9878480edecd", "code"=>"4/4AEEWpIYdyqCsQbHyHFOmYMgi84B1TkK1L6M58nj8HI2A7Vbew_LLpJ2C71NNiUc-odxqwpGWlSbXIV6Zp_wfZc", "scope"=>"email https://www.googleapis.com/auth/userinfo.email openid", "authuser"=>"0", "prompt"=>"consent", "provider"=>"google_oauth2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "111848931496290675316"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sessions_controller.rb:9
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mlynch5187@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["uid", "111848931496290675316"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."google_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["google_token", "ya29.a0AfH6SMCZad-UUbZJjc8xHwYC6ZpMF2OwYjmAri3CuiDtA0ZIXEdIboa8JfkkJxPf9n3nQjVphp9rV2oeQo7qkW6ffp2lhGSCrUTjVkEf77pKQkOLMi4Iw4CrUmCU-ktJijlcajCBMeOvfcMfMrbyMuMaQlDF6GKt6GA"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9
+  [1m[36mUser Update (1.2ms)[0m  [1m[33mUPDATE "users" SET "google_token" = $1, "google_refresh_token" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["google_token", "ya29.a0AfH6SMCZad-UUbZJjc8xHwYC6ZpMF2OwYjmAri3CuiDtA0ZIXEdIboa8JfkkJxPf9n3nQjVphp9rV2oeQo7qkW6ffp2lhGSCrUTjVkEf77pKQkOLMi4Iw4CrUmCU-ktJijlcajCBMeOvfcMfMrbyMuMaQlDF6GKt6GA"], ["google_refresh_token", "1//04HAMuWmaJgDmCgYIARAAGAQSNwF-L9IrnoHe3ycAZJ17Udhb8y5W5CLvkQpHGozlALsvkxuitpVbrgomgP4DH2uzHcHRpaVDVIc"], ["updated_at", "2020-09-15 16:56:28.275769"], ["id", 1]]
+  ↳ app/controllers/sessions_controller.rb:9
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sessions_controller.rb:9
+Redirected to http://localhost:3000/dashboard
+Completed 302 Found in 33ms (ActiveRecord: 8.4ms)
+
+
+Started GET "/dashboard" for ::1 at 2020-09-15 10:56:28 -0600
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mGarden Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "gardens" WHERE "gardens"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:3
+  [1m[36mGarden Load (0.2ms)[0m  [1m[34mSELECT "gardens".* FROM "gardens"[0m
+  ↳ app/views/users/show.html.erb:4
+  Rendered users/show.html.erb within layouts/application (32.9ms)
+Completed 200 OK in 341ms (Views: 330.7ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/users/gardens/1/plants/new" for ::1 at 2020-09-15 10:56:31 -0600
+Processing by Users::PlantsController#new as HTML
+  Parameters: {"garden_id"=>"1"}
+  [1m[36mGarden Load (0.2ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:4
+  Rendering users/plants/new.html.erb within layouts/application
+  Rendered users/plants/new.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 5875ms (Views: 25.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users/gardens/1/plants" for ::1 at 2020-09-15 10:56:50 -0600
+Processing by Users::PlantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FNE4LZNInCUNKoVgHzDsuOsoy0R8MEwmGuAAB6lx3uMg4a3ki+x4/r43kP8NxPNxDcYG0juFdSDGfY+TPPmxqg==", "plant"=>["176845", "167892", "127363"], "commit"=>"Create Garden", "garden_id"=>"1"}
+  [1m[36mGarden Load (0.3ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:9
+Redirected to http://localhost:3000/users/gardens/1/plants/plot
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/users/gardens/1/plants/plot" for ::1 at 2020-09-15 10:56:50 -0600
+Processing by Users::PlantsController#plot as HTML
+  Parameters: {"garden_id"=>"1"}
+  [1m[36mGarden Load (0.3ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:16
+  Rendering users/plants/plot.html.erb within layouts/application
+  Rendered users/plants/plot.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 2175ms (Views: 25.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/gardens/1/plants/plot" for ::1 at 2020-09-15 10:57:26 -0600
+Processing by Users::PlantsController#plot as HTML
+  Parameters: {"garden_id"=>"1"}
+  [1m[36mGarden Load (0.5ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:16
+  Rendering users/plants/plot.html.erb within layouts/application
+  Rendered users/plants/plot.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 2373ms (Views: 18.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/gardens/1/plants/plot" for ::1 at 2020-09-15 10:57:40 -0600
+Processing by Users::PlantsController#plot as HTML
+  Parameters: {"garden_id"=>"1"}
+  [1m[36mGarden Load (0.3ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:16
+  Rendering users/plants/plot.html.erb within layouts/application
+  Rendered users/plants/plot.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 2303ms (Views: 22.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/gardens/1/plants/plot" for ::1 at 2020-09-15 10:58:04 -0600
+Processing by Users::PlantsController#plot as HTML
+  Parameters: {"garden_id"=>"1"}
+  [1m[36mGarden Load (0.4ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:16
+  Rendering users/plants/plot.html.erb within layouts/application
+  Rendered users/plants/plot.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 2412ms (Views: 15.0ms | ActiveRecord: 1.5ms)
+
+
+Started PUT "/users/gardens/1/plants/decrease" for ::1 at 2020-09-15 10:58:18 -0600
+Processing by Users::PlantsController#decrease as HTML
+  Parameters: {"authenticity_token"=>"ad26XmoKsYstd0Z3tAXARnTVeUEznuRmf8MZCxVyO1YqPGz1ZKkacJpqtz5PBd+wLqrLIoZECa0ek4PO6v6+Zg==", "garden_id"=>"1"}
+  [1m[36mGarden Load (0.4ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:33
+Completed 500 Internal Server Error in 335ms (ActiveRecord: 0.4ms)
+
+
+  
+NameError (undefined local variable or method `garden' for #<Users::PlantsController:0x00007fd4972339d0>):
+  
+app/controllers/users/plants_controller.rb:36:in `decrease'
+Started GET "/users/gardens/1/plants/plot" for ::1 at 2020-09-15 11:00:01 -0600
+Processing by Users::PlantsController#plot as HTML
+  Parameters: {"garden_id"=>"1"}
+  [1m[36mGarden Load (0.2ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:16
+  Rendering users/plants/plot.html.erb within layouts/application
+  Rendered users/plants/plot.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 2525ms (Views: 28.6ms | ActiveRecord: 6.5ms)
+
+
+Started PUT "/users/gardens/1/plants/decrease" for ::1 at 2020-09-15 11:00:07 -0600
+Processing by Users::PlantsController#decrease as HTML
+  Parameters: {"authenticity_token"=>"Ud/Ki24V5JeSnffRjZe6PvceGRPlhbmuoNP5cPhjnlESPhwgYLZPbCWABph2l6XIrWGrcFBfVGXBg2O1B+8bYQ==", "garden_id"=>"1"}
+  [1m[36mGarden Load (0.2ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:34
+  [1m[36mCACHE Garden Load (0.0ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:35
+Redirected to http://localhost:3000/users/gardens/1/plants/plot
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/gardens/1/plants/plot" for ::1 at 2020-09-15 11:00:07 -0600
+Processing by Users::PlantsController#plot as HTML
+  Parameters: {"garden_id"=>"1"}
+  [1m[36mGarden Load (0.1ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:16
+  Rendering users/plants/plot.html.erb within layouts/application
+  Rendered users/plants/plot.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 2291ms (Views: 21.8ms | ActiveRecord: 0.4ms)
+
+
+Started PUT "/users/gardens/1/plants/decrease" for ::1 at 2020-09-15 11:00:12 -0600
+Processing by Users::PlantsController#decrease as HTML
+  Parameters: {"authenticity_token"=>"3iBXMoA4pWxHqDfTCEuPTZF+64JaSlUogWy35F3ZVyKdwYGZjpsOl/C1xprzS5C7ywFZ4e+QuOPgPC0holXSEg==", "garden_id"=>"1"}
+  [1m[36mGarden Load (0.2ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:34
+  [1m[36mCACHE Garden Load (0.0ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:35
+Redirected to http://localhost:3000/users/gardens/1/plants/plot
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/gardens/1/plants/plot" for ::1 at 2020-09-15 11:00:12 -0600
+Processing by Users::PlantsController#plot as HTML
+  Parameters: {"garden_id"=>"1"}
+  [1m[36mGarden Load (0.2ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:16
+  Rendering users/plants/plot.html.erb within layouts/application
+  Rendered users/plants/plot.html.erb within layouts/application (12.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 2323ms (Views: 33.3ms | ActiveRecord: 0.6ms)
+
+
+Started PUT "/users/gardens/1/plants/decrease" for ::1 at 2020-09-15 11:00:17 -0600
+Processing by Users::PlantsController#decrease as HTML
+  Parameters: {"authenticity_token"=>"0vHF3oQU194QW5qxCSLlfQgjE5CeENqm41c5qXLVlVmREBN1ird8JadGa/jyIvqLUlyh8yvKN22CB6NsjVkQaQ==", "garden_id"=>"1"}
+  [1m[36mGarden Load (0.2ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:34
+  [1m[36mCACHE Garden Load (0.0ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:35
+Redirected to http://localhost:3000/users/gardens/1/plants/plot
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/gardens/1/plants/plot" for ::1 at 2020-09-15 11:00:17 -0600
+Processing by Users::PlantsController#plot as HTML
+  Parameters: {"garden_id"=>"1"}
+  [1m[36mGarden Load (0.2ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:16
+  Rendering users/plants/plot.html.erb within layouts/application
+  Rendered users/plants/plot.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 2303ms (Views: 22.7ms | ActiveRecord: 0.5ms)
+
+
+Started PUT "/users/gardens/1/plants/decrease" for ::1 at 2020-09-15 11:00:25 -0600
+Processing by Users::PlantsController#decrease as HTML
+  Parameters: {"authenticity_token"=>"i/8lMa55I3SZs/VJSHl4w3DkP+o6UrqC1mT2Uzn6PtrIHvOaoNqIjy6uBACzeWc1KpuNiY+IV0m3NGyWxna76g==", "garden_id"=>"1"}
+  [1m[36mGarden Load (0.2ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:34
+  [1m[36mCACHE Garden Load (0.0ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:35
+Redirected to http://localhost:3000/users/gardens/1/plants/plot
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/gardens/1/plants/plot" for ::1 at 2020-09-15 11:00:25 -0600
+Processing by Users::PlantsController#plot as HTML
+  Parameters: {"garden_id"=>"1"}
+  [1m[36mGarden Load (0.2ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:16
+  Rendering users/plants/plot.html.erb within layouts/application
+  Rendered users/plants/plot.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 2290ms (Views: 49.1ms | ActiveRecord: 0.4ms)
+
+
+Started PUT "/users/gardens/1/plants/increase" for ::1 at 2020-09-15 11:00:51 -0600
+Processing by Users::PlantsController#increase as HTML
+  Parameters: {"authenticity_token"=>"7Jq721dTR2T+W+8CumH1NmCFDoD2b45gnHy/kY21tLqve21wWfDsn0lGHktBYerAOvq840O1Y6v9LCVUcjkxig==", "garden_id"=>"1"}
+  [1m[36mGarden Load (0.5ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:24
+Redirected to http://localhost:3000/users/gardens/1/plants/plot
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/users/gardens/1/plants/plot" for ::1 at 2020-09-15 11:00:51 -0600
+Processing by Users::PlantsController#plot as HTML
+  Parameters: {"garden_id"=>"1"}
+  [1m[36mGarden Load (0.2ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:16
+  Rendering users/plants/plot.html.erb within layouts/application
+  Rendered users/plants/plot.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 2349ms (Views: 31.5ms | ActiveRecord: 0.5ms)
+
+
+Started PUT "/users/gardens/1/plants/increase" for ::1 at 2020-09-15 11:00:55 -0600
+Processing by Users::PlantsController#increase as HTML
+  Parameters: {"authenticity_token"=>"KcP/33C0QBlGAhqfnKNL0a3rVaGwyXXqzWo5znLkpf5qIil0fhfr4vEf69Zno1Qn95TnwgUTmCGsOqMLjWggzg==", "garden_id"=>"1"}
+  [1m[36mGarden Load (0.2ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:24
+Redirected to http://localhost:3000/users/gardens/1/plants/plot
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/gardens/1/plants/plot" for ::1 at 2020-09-15 11:00:55 -0600
+Processing by Users::PlantsController#plot as HTML
+  Parameters: {"garden_id"=>"1"}
+  [1m[36mGarden Load (0.3ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:16
+  Rendering users/plants/plot.html.erb within layouts/application
+  Rendered users/plants/plot.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 2292ms (Views: 21.6ms | ActiveRecord: 0.5ms)
+
+
+Started PUT "/users/gardens/1/plants/decrease" for ::1 at 2020-09-15 11:01:01 -0600
+Processing by Users::PlantsController#decrease as HTML
+  Parameters: {"authenticity_token"=>"k4rxlUoF3uU+b4J85q+54ZlCpPw6NYT4P6W3Otu3OKHQayc+RKZ1HolyczUdr6YXwz0Wn4/vaTNe9S3/JDu9kQ==", "garden_id"=>"1"}
+  [1m[36mGarden Load (0.2ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:34
+  [1m[36mCACHE Garden Load (0.0ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:35
+Redirected to http://localhost:3000/users/gardens/1/plants/plot
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/gardens/1/plants/plot" for ::1 at 2020-09-15 11:01:01 -0600
+Processing by Users::PlantsController#plot as HTML
+  Parameters: {"garden_id"=>"1"}
+  [1m[36mGarden Load (0.2ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:16
+  Rendering users/plants/plot.html.erb within layouts/application
+  Rendered users/plants/plot.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 2323ms (Views: 24.5ms | ActiveRecord: 0.5ms)
+
+
+Started PUT "/users/gardens/1/plants/decrease" for ::1 at 2020-09-15 11:01:10 -0600
+Processing by Users::PlantsController#decrease as HTML
+  Parameters: {"authenticity_token"=>"CH7qM6UMNn+25q9oaZiAW/0C15ed5usjY13E1eHU3q1LnzyYq6+dhAH7XiGSmJ+tp31l9Cg8BugCDV4QHlhbnQ==", "garden_id"=>"1"}
+  [1m[36mGarden Load (0.2ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:34
+  [1m[36mCACHE Garden Load (0.0ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:35
+Redirected to http://localhost:3000/users/gardens/1/plants/plot
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/gardens/1/plants/plot" for ::1 at 2020-09-15 11:01:10 -0600
+Processing by Users::PlantsController#plot as HTML
+  Parameters: {"garden_id"=>"1"}
+  [1m[36mGarden Load (0.2ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:16
+  Rendering users/plants/plot.html.erb within layouts/application
+  Rendered users/plants/plot.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 2294ms (Views: 22.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/gardens/1/plants/plot" for ::1 at 2020-09-15 11:03:17 -0600
+Processing by Users::PlantsController#plot as HTML
+  Parameters: {"garden_id"=>"1"}
+  [1m[36mGarden Load (0.2ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:16
+  Rendering users/plants/plot.html.erb within layouts/application
+  Rendered users/plants/plot.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 2478ms (Views: 33.5ms | ActiveRecord: 20.0ms)
+
+
+Started PUT "/users/gardens/1/plants/increase" for ::1 at 2020-09-15 11:03:25 -0600
+Processing by Users::PlantsController#increase as HTML
+  Parameters: {"authenticity_token"=>"vGGJWC2wO4nbddh565jvn0MH8RBY+Exibn9QbDOuplL/gF/zIxOQcmxoKTAQmPBpGXhDc+0ioakPL8qpzCIjYg==", "garden_id"=>"1"}
+  [1m[36mGarden Load (0.2ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:24
+Redirected to http://localhost:3000/users/gardens/1/plants/plot
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/gardens/1/plants/plot" for ::1 at 2020-09-15 11:03:25 -0600
+Processing by Users::PlantsController#plot as HTML
+  Parameters: {"garden_id"=>"1"}
+  [1m[36mGarden Load (0.2ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:16
+  Rendering users/plants/plot.html.erb within layouts/application
+  Rendered users/plants/plot.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 2248ms (Views: 19.5ms | ActiveRecord: 0.4ms)
+
+
+Started PUT "/users/gardens/1/plants/decrease" for ::1 at 2020-09-15 11:03:29 -0600
+Processing by Users::PlantsController#decrease as HTML
+  Parameters: {"authenticity_token"=>"TKQXTL2fRQkpcigKhxogJp+ma3B0TKQ1bfnxbdeX5YgPRcHnszzu8p5v2UN8Gj/QxdnZE8GWSf4MqWuoKBtguA==", "garden_id"=>"1"}
+  [1m[36mGarden Load (0.5ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:34
+  [1m[36mCACHE Garden Load (0.0ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:35
+Redirected to http://localhost:3000/users/gardens/1/plants/plot
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/users/gardens/1/plants/plot" for ::1 at 2020-09-15 11:03:29 -0600
+Processing by Users::PlantsController#plot as HTML
+  Parameters: {"garden_id"=>"1"}
+  [1m[36mGarden Load (0.2ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:16
+  Rendering users/plants/plot.html.erb within layouts/application
+  Rendered users/plants/plot.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 2359ms (Views: 22.6ms | ActiveRecord: 1.7ms)
+
+
+Started PUT "/users/gardens/1/plants/decrease" for ::1 at 2020-09-15 11:03:33 -0600
+Processing by Users::PlantsController#decrease as HTML
+  Parameters: {"authenticity_token"=>"AJAEFcBQuSOcb+HHeGpLkCr+Lh4h0WPM6ZpPRboy7OBDcdK+zvMS2CtyEI6DalRmcIGcfZQLjgeIytWARb5p0A==", "garden_id"=>"1"}
+  [1m[36mGarden Load (0.2ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:34
+  [1m[36mCACHE Garden Load (0.0ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:35
+Redirected to http://localhost:3000/users/gardens/1/plants/plot
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/gardens/1/plants/plot" for ::1 at 2020-09-15 11:03:33 -0600
+Processing by Users::PlantsController#plot as HTML
+  Parameters: {"garden_id"=>"1"}
+  [1m[36mGarden Load (0.1ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:16
+  Rendering users/plants/plot.html.erb within layouts/application
+  Rendered users/plants/plot.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 2293ms (Views: 19.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/gardens/1/plants/plot" for ::1 at 2020-09-15 11:04:38 -0600
+Processing by Users::PlantsController#plot as HTML
+  Parameters: {"garden_id"=>"1"}
+  [1m[36mGarden Load (0.6ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:16
+  Rendering users/plants/plot.html.erb within layouts/application
+  Rendered users/plants/plot.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 2435ms (Views: 49.1ms | ActiveRecord: 0.9ms)
+
+
+Started PUT "/users/gardens/1/plants/decrease" for ::1 at 2020-09-15 11:04:44 -0600
+Processing by Users::PlantsController#decrease as HTML
+  Parameters: {"authenticity_token"=>"Be7vOUC57jeA/GPZ3NTZZiSUiwU4h3zuDCdD0NhOVKtGDzmSThpFzDfhkpAn1MaQfus5Zo1dkSVtd9kVJ8LRmw==", "garden_id"=>"1"}
+  [1m[36mGarden Load (0.2ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:34
+  [1m[36mCACHE Garden Load (0.0ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:35
+Redirected to http://localhost:3000/users/gardens/1/plants/plot
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/gardens/1/plants/plot" for ::1 at 2020-09-15 11:04:44 -0600
+Processing by Users::PlantsController#plot as HTML
+  Parameters: {"garden_id"=>"1"}
+  [1m[36mGarden Load (0.1ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:16
+  Rendering users/plants/plot.html.erb within layouts/application
+  Rendered users/plants/plot.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (6.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 2367ms (Views: 26.9ms | ActiveRecord: 6.9ms)
+
+
+Started PUT "/users/gardens/1/plants/increase" for ::1 at 2020-09-15 11:04:50 -0600
+Processing by Users::PlantsController#increase as HTML
+  Parameters: {"authenticity_token"=>"8c7Lrzr/JanLleamCJUujIeydXwF1KUFc/QzF2Lp7xayLx0ENFyOUnyIF+/zlTF63c3HH7AOSM4SpKnSnWVqJg==", "garden_id"=>"1"}
+  [1m[36mGarden Load (0.4ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:24
+Redirected to http://localhost:3000/users/gardens/1/plants/plot
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/users/gardens/1/plants/plot" for ::1 at 2020-09-15 11:04:50 -0600
+Processing by Users::PlantsController#plot as HTML
+  Parameters: {"garden_id"=>"1"}
+  [1m[36mGarden Load (0.2ms)[0m  [1m[34mSELECT  "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/plants_controller.rb:16
+  Rendering users/plants/plot.html.erb within layouts/application
+  Rendered users/plants/plot.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 2315ms (Views: 23.3ms | ActiveRecord: 0.5ms)
+
+

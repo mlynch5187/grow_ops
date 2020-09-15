@@ -1,10 +1,14 @@
 <h4>We've randomly selected 50 plants that will grow in your garden</h4>
 <h3>Choose your favorite's to get started!</h3>
 
-<%= form_tag("/users/gardens/#{@garden.id}/plants") do %>
-  <% @plants.each do |plant| %>
-  <%= plant[:common_name] %><%= check_box_tag "plant[]", plant[:id], false%><br>
-    <img src="<%= plant[:image_url] %>" alt="<%= plant[:common_name] %>" style="width:200px;height:300px;"><br>
+<div class="plants">
+  <%= form_tag("/users/gardens/#{@garden.id}/plants") do %>
+    <% @plants.each do |plant| %>
+      <section id="plant-<%= plant[:id] %>">
+        <%= plant[:common_name] %><%= check_box_tag "plant[]", plant[:id], false%><br>
+        <img src="<%= plant[:image_url] %>" alt="<%= plant[:common_name] %>" style="width:200px;height:300px;"><br>
+      </section>
+    <% end %>
+    <%= submit_tag 'Create Garden', class: 'submit' %>
   <% end %>
-<%= submit_tag 'Create Garden', class: 'submit' %>
-<% end %>
+</div>

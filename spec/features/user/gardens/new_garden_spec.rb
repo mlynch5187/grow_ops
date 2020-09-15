@@ -31,19 +31,32 @@ RSpec.describe 'As a logged in user' do
     fill_in "length_inches", with: 2
     fill_in "width_feet", with: 3
     fill_in "width_inches", with: 4
-    fill_in "zip_code", with: "80503"
+    fill_in "zip_code", with: "80111"
     fill_in "light", with: 6
 
     click_on("Create Garden")
-    click_on("Add plants to garden")
 
-    expect(current_path).to eq("/gardens/1/plants/new")
+    garden = Garden.last
 
-    expect(page).to have_content("Recommended plants for your area:")
+    within ".garden-#{garden.id}" do
+      click_on("Add plants to garden")
+    end
+
+    expect(current_path).to eq("/users/gardens/#{garden.id}/plants/new")
+
+    expect(page).to have_content("We've randomly selected 50 plants that will grow in your garden")
+    within(first(".plants")) do
+      find(:css, "#plant-").set(true)
+    end
+    click_button "Create Garden"
 
     expect(page).to have_css(".plants")
 
     expect(page).to have_content("Remaining plot size:")
     expect(page).to have_button("Add Plants to Garden")
+  end
+
+  it "if user does not select any plants" do
+
   end
 end

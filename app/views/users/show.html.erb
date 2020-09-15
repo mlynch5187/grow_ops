@@ -1,14 +1,15 @@
 <%= button_to "Create a new garden", "/users/gardens/new", method: :get%>
 <br>
 <div class='gardens'>
-<% if current_user.gardens.any? %>
-  <% @gardens.each do |garden| %>
-    <section class="garden-<%= garden.id %>">
-      <%= link_to "#{garden.name}", "/users/gardens/#{garden.id}"%><br>
-      <p>Current Plants in Garden:</p>
-      <%= "#{garden.plants.map {|plant| plant.name}.uniq.join(", ")}" %><br>
-      <%= link_to "Add plants to garden", "/users/gardens/#{garden.id}/plants/new"%><br>
-      <%= link_to "Delete Garden", "/users/gardens/#{garden.id}", method: :delete %><br><br><br>
-    </section>
+  <% if current_user.gardens.any? %>
+    <% @gardens.each do |garden| %>
+      <section class="garden-<%= garden.id %>">
+        <%= link_to "#{garden.name}", "/users/gardens/#{garden.id}"%><br>
+        <p>Current Plants in Garden:</p>
+        <%= "#{garden.plants.map {|plant| plant.name}.uniq.join(", ")}" %><br>
+        <%= link_to "Add plants to garden", "/users/gardens/#{garden.id}/plants/new"%><br>
+        <%= link_to "Delete Garden", "/users/gardens/#{garden.id}", method: :delete %><br><br><br>
+      </section>
+    <% end %>
   <% end %>
 </div>

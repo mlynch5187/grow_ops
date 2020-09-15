@@ -9,6 +9,13 @@ class Users::PlantsController < ApplicationController
     @garden = Garden.find(params[:garden_id])
     session[:plants] = params[:plant]
     session[:plot] = @garden.plot_size
+
+    quantity = {}
+    params[:plant].each do |plant|
+      quantity[plant] = 0
+    end
+    session[:plant_quantity] = quantity
+
     redirect_to "/users/gardens/#{@garden.id}/plants/plot"
   end
 
@@ -21,10 +28,10 @@ class Users::PlantsController < ApplicationController
   end
 
   def increase
-
     garden = Garden.find(params[:garden_id])
     unless session[:plot] <= 50
       session[:plot] -= 100
+      session[:plant_quantity][params[:plant_id]] += 1
     else
       flash[:error] = "You have exceeded the maximum space for #{garden.name}!"
     end
@@ -33,8 +40,9 @@ class Users::PlantsController < ApplicationController
 
   def decrease
     garden = Garden.find(params[:garden_id])
-    unless session[:plot] == Garden.find(params[:garden_id]).plot_size
+    unless (session[:plot] == Garden.find(params[:garden_id]).plot_size) || (session[:plant_quantity][params[:plant_id]] == 0)
       session[:plot] += 100
+      session[:plant_quantity][params[:plant_id]] -= 1
     else
       flash[:error] = "You already have the maximum space for #{garden.name}!"
     end

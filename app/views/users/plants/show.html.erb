@@ -1,0 +1,15 @@
+<h2><%= @plant.name %></h2>
+
+
+<h4>Plant Information</h4>
+<p>Minimum pH of Soil: <%= @plant.ph_min %></p>
+<p>Maximum pH of Soil: <%= @plant.ph_max %></p>
+<p>Average light Rating: <%= @plant.light %> lumens</p>
+<p>Minimum Temperature: <%= @plant.min_temp %></p>
+<p>Maximum Temperature: <%= @plant.max_temp %></p>
+<p>Growth Spread: <%= @plant.spread %></p>
+<p>Row Spacing: <%= @plant.row_spacing %></p>
+<p>Days to Harvest: <%= @plant.days_to_harvest %></p>
+<p>Edible: <%= @plant.edible %></p>
+<p>Images: </p>
+<img src="<%= @plant.image %>" alt="<%= @plant.name %>" style="width:200px;height:300px;">

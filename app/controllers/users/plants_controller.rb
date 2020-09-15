@@ -5,6 +5,10 @@ class Users::PlantsController < ApplicationController
     @plants = PlantObject.recommendations(@garden.zip_code, @garden.light)
   end
 
+  def show
+    @plant = Plant.find(params[:id])
+  end
+
   def create
     @garden = Garden.find(params[:garden_id])
     session[:plants] = params[:plant]

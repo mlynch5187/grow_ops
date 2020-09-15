@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   delete '/', to: 'sessions#destroy'
 
   get '/dashboard', to: 'users#show'
-
+  
   namespace :users do
     resources :gardens do
       get '/plants/plot', to: 'plants#plot'

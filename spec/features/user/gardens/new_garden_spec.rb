@@ -50,10 +50,11 @@ RSpec.describe 'As a logged in user' do
     end
     click_button "Create Garden"
 
-    expect(page).to have_css(".plants")
+    expect(page).to have_content("Choose your favorite plants to get started!")
 
-    expect(page).to have_content("Remaining plot size:")
-    expect(page).to have_button("Add Plants to Garden")
+    expect(page).to have_css(".card")
+
+    expect(page).to have_button("Create Garden")
   end
 
   it "if user does not select any plants" do

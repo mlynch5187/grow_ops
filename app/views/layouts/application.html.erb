@@ -19,6 +19,13 @@
     <hr>
   </header>
   <body>
+    <div class='flash-alert'>
+    <% flash.each do |name, msg| %>
+      <div class= "<%=name%>-flash">
+        <p><%= msg.html_safe %></p>
+      </div>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
     <footer>

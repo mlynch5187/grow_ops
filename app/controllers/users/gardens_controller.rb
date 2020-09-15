@@ -3,6 +3,11 @@ class Users::GardensController < ApplicationController
     @garden = Garden.new
   end
 
+  def show
+    @garden = Garden.find(params[:id])
+    @plants = @garden.plants.select('distinct on (name) *')
+  end
+
   def create
     current_user.gardens.create(
       name: garden_params[:name],

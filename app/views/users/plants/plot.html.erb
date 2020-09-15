@@ -3,8 +3,14 @@
 
 <h6>Select the number of each plant desired</h6>
 
-<% @plants.each do |plant| %>
-  <%= plant.name %>
-  <%= link_to "Increase Amount", "/users/gardens/#{@garden.id}/plants/increase", method: :put %>
-  <%= link_to "Decrease Amount", "/users/gardens/#{@garden.id}/plants/decrease", method: :put %><br>
+<%= form_tag("/users/gardens/#{@garden.id}/plants/new_garden") do %>
+  <% @plants.each do |plant| %>
+    <h3><b><%= plant.name %></b></h3><br>
+    <img src="<%= plant.images[:flower].first[:image_url] %>" alt="<%= plant.name %>" style="width:200px;height:300px;"><br>
+    <p>Current Quantity: <%= session[:plant_quantity][plant.id.to_s] %> </p>
+
+    <%= link_to "Increase Amount", "/users/gardens/#{@garden.id}/plants/#{plant.id}/increase", method: :put %>
+    <%= link_to "Decrease Amount", "/users/gardens/#{@garden.id}/plants/#{plant.id}/decrease", method: :put %><br><br>
+  <% end %>
+<%= submit_tag 'Create Garden', class: 'submit' %>
 <% end %>

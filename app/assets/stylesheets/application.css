@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+ #flash-alert {
+ 	color: red;
+ 	margin: 10px 0px 20px 0px;
+ }

@@ -6,12 +6,13 @@ Rails.application.routes.draw do
   delete '/', to: 'sessions#destroy'
 
   get '/dashboard', to: 'users#show'
-
+  
   namespace :users do
     resources :gardens do
       get '/plants/plot', to: 'plants#plot'
-      put '/plants/increase', to: 'plants#increase'
-      put '/plants/decrease', to: 'plants#decrease'
+      put '/plants/:plant_id/increase', to: 'plants#increase'
+      put '/plants/:plant_id/decrease', to: 'plants#decrease'
+      post '/plants/new_garden', to: 'plants#new_garden'
       resources :plants do
       end
     end

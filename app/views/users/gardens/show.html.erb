@@ -9,7 +9,7 @@
       <div class="col-auto mb-3">
         <div class="card" style="width: 18rem;">
             <div class="card-body">
-              <h5 class="card-title center"><%= link_to "#{plant.name}", "/users/gardens/#{plant.id}"%></h5>
+              <h5 class="card-title center"><%= link_to "#{plant.name}", "/users/gardens/#{@garden.id}/plants/#{plant.id}"%></h5>
                 <img class="card-img-top" src="<%= plant.image %>" alt="<%= plant.name %>" style="width:250px;height:250px;">
             </div>
           </div>

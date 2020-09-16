@@ -1,6 +1,7 @@
 <h1> Create a New Garden </h1>
 
 <%= form_tag "/users/gardens", method: :post do %>
+
   <%= label_tag :name, 'Name of Garden:' %>
   <%= text_field_tag :name %><br>
 

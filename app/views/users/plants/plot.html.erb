@@ -10,7 +10,7 @@
   <div class="row">
   <% @plants.each do |plant| %>
     <div class="col-auto mb-3">
-      <div class="card" style="width: 18rem;">
+      <div class="card bg-dark" style="width: 18rem;">
           <div class="card-body">
               <img class="card-img-top" src="<%= plant.images[:flower].first[:image_url] %>" alt="<%= plant.name %>" style="width:250px;height:250px;">
               <h5 class="card-title"><%= plant.name%></h5>

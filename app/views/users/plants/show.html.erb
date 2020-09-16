@@ -1,38 +1,40 @@
-<h2><%= @plant.name %></h2>
+<div class="center">
+  <h2><%= @plant.name %> Information</h2>
 
+  <p>Minimum pH of Soil: <%= @plant.ph_min %></p>
+  <p>Maximum pH of Soil: <%= @plant.ph_max %></p>
 
-<h4>Plant Information</h4>
-<p>Minimum pH of Soil: <%= @plant.ph_min %></p>
-<p>Maximum pH of Soil: <%= @plant.ph_max %></p>
+  <% if @plant.light %>
+    <% if @plant.light < 3 %>
+      <p>Average light Rating: <%= @plant.light %> - Shady</p>
+    <% elsif @plant.light >= 4 && @plant.light <= 7 %>
+      <p>Average light Rating: <%= @plant.light %> - Mostly Sunny</p>
+    <% else @plant.light > 7 %>
+      <p>Average light Rating: <%= @plant.light %> - Very Sunny</p>
+    <% end %>
+  <% end %>
 
-<% if @plant.light < 3 %>
-  <p>Average light Rating: <%= @plant.light %> - Shady</p>
-<% elsif @plant.light >= 4 && @plant.light <= 7 %>
-  <p>Average light Rating: <%= @plant.light %> - Mostly Sunny</p>
-<% else @plant.light > 7 %>
-  <p>Average light Rating: <%= @plant.light %> - Very Sunny</p>
-<% end %>
+  <% if @plant.min_temp %>
+    <p>Minimum Temperature: <%= @plant.min_temp %></p>
+  <% end %>
 
-<% if @plant.min_temp == !nil %>
-  <p>Minimum Temperature: <%= @plant.min_temp %></p>
-<% end %>
+  <% if @plant.max_temp %>
+    <p>Maximum Temperature: <%= @plant.max_temp %></p>
+  <% end %>
 
-<% if @plant.max_temp == !nil %>
-  <p>Maximum Temperature: <%= @plant.max_temp %></p>
-<% end %>
+  <% if @plant.spread %>
+    <p>Growth Spread: <%= @plant.spread %>cm</p>
+  <% end %>
 
-<% if @plant.spread == !nil %>
-  <p>Growth Spread: <%= @plant.spread %></p>
-<% end %>
+  <% if @plant.row_spacing %>
+    <p>Row Spacing: <%= @plant.row_spacing %>cm</p>
+  <% end %>
 
-<% if @plant.row_spacing == !nil %>
-  <p>Row Spacing: <%= @plant.row_spacing %></p>
-<% end %>
+  <% if @plant.days_to_harvest %>
+    <p>Days to Harvest: <%= @plant.days_to_harvest %></p>
+  <% end %>
 
-<% if @plant.days_to_harvest == !nil %>
-  <p>Days to Harvest: <%= @plant.days_to_harvest %></p>
-<% end %>
+  <p>Edible: <%= @plant.edible %></p>
 
-<p>Edible: <%= @plant.edible %></p>
-<p>Images: </p>
-<img src="<%= @plant.image %>" alt="<%= @plant.name %>" style="width:200px;height:300px;">
+  <img src="<%= @plant.image %>" alt="<%= @plant.name %>" style="width:200px;height:300px;">
+</div>

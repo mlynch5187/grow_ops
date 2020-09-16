@@ -8,10 +8,10 @@
   <div class="row">
   <% @plants.each do |plant| %>
         <div class="col-auto mb-3">
-            <div class="card" style="width: 18rem;">
+            <div class="card bg-dark" style="width: 18rem;">
                 <div class="card-body">
                     <img class="card-img-top" src="<%= plant[:image_url] %>" alt="<%= plant[:common_name] %>" style="width:250px;height:250px;">
-                    <h5 class="card-title"><%= check_box_tag "plant[]", plant[:id], false%> <%= plant[:common_name] %></h5>
+                    <h5 class="card-title"><%= check_box_tag "plant[]", plant[:id], false%><p class="text-white bg-dark"><%= "#{plant[:common_name]}" %></p></h5>
                 </div>
             </div>
         </div>

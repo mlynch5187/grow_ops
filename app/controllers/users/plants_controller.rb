@@ -10,17 +10,21 @@ class Users::PlantsController < ApplicationController
   end
 
   def create
-    @garden = Garden.find(params[:garden_id])
-    session[:plants] = params[:plant]
-    session[:plot] = @garden.plot_size
-
-    quantity = {}
-    params[:plant].each do |plant|
-      quantity[plant] = 0
+    if params[:plant]
+      @garden = Garden.find(params[:garden_id])
+      session[:plants] = params[:plant]
+      session[:plot] = @garden.plot_size
+      quantity = {}
+      params[:plant].each do |plant|
+        quantity[plant] = 0
+      end
+      session[:plant_quantity] = quantity
+      redirect_to "/users/gardens/#{@garden.id}/plants/plot"
+    else
+      @garden = Garden.find(params[:garden_id])
+      flash[:error] = "Please select plants to add to your garden"
+      redirect_to "/users/gardens/#{@garden.id}/plants/new"
     end
-    session[:plant_quantity] = quantity
-
-    redirect_to "/users/gardens/#{@garden.id}/plants/plot"
   end
 
   def plot

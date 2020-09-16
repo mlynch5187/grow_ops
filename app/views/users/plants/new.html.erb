@@ -4,13 +4,11 @@
 <div class="plants">
   <%= form_tag("/users/gardens/#{@garden.id}/plants") do %>
     <% @plants.each do |plant| %>
-    <div class='card'>
-      <section id="plant-<%= plant[:id] %>">
-        <%= plant[:common_name] %><%= check_box_tag "plant[]", plant[:id], false%><br>
+      <div class='card'>
+        <%= plant[:common_name] %><%= check_box_tag "plant[]", plant[:id], false %><br>
         <img src="<%= plant[:image_url] %>" alt="<%= plant[:common_name] %>" style="width:200px;height:300px;"><br>
-      </section>
-    </div>
+      </div>
     <% end %>
-  <%= submit_tag 'Select Plants', class: 'submit' %>
+    <%= submit_tag 'Select Plants', class: 'submit' %>
   <% end %>
 </div>

@@ -1,17 +1,26 @@
-<h4>We've randomly selected plants that will grow in your garden</h4>
-<h3>Choose your favorites to get started!</h3>
+<div class="center">
+  <h4>We've randomly selected plants that will grow in your garden</h4>
+  <h3>Choose your favorites to get started!</h3>
+</div>
 
 <%= form_tag("/users/gardens/#{@garden.id}/plants") do %>
-<div class="card-columns">
+<div class="container mt-4">
+  <div class="row">
   <% @plants.each do |plant| %>
-  <div class="card">
-    <img class="card-img-top" src="<%= plant[:image_url] %>" alt="<%= plant[:common_name] %>">
-    <div class="card-body">
-      <h5 class="card-title"><%= plant[:common_name] %></h5>
-      <%= check_box_tag "plant[]", plant[:id], false%><br>
+        <div class="col-auto mb-3">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <img class="card-img-top" src="<%= plant[:image_url] %>" alt="<%= plant[:common_name] %>" style="width:250px;height:250px;">
+                    <h5 class="card-title"><%= check_box_tag "plant[]", plant[:id], false%> <%= plant[:common_name] %></h5>
+                </div>
+            </div>
+        </div>
+        <% end %>
     </div>
-  </div>
-  <% end %>
+    <div class="center">
+      <%= button_tag(type: "submit", class: "btn btn-success") do %>
+      Select Plants
+      <% end %>
+    </div>
 </div>
-<%= submit_tag 'Create Garden', class: 'submit' %>
 <% end %>

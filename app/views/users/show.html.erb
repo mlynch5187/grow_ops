@@ -1,10 +1,37 @@
-<%= button_to "Create a new garden", "/users/gardens/new", method: :get%>
-<br>
 <% if current_user.gardens.any? %>
-  <% @gardens.each do |garden| %>
-    <%= link_to "#{garden.name}", "/users/gardens/#{garden.id}"%><br>
-    <p>Current Plants in Garden:</p>
-    <%= "#{garden.plants.map {|plant| plant.name}.uniq.join(", ")}" %><br>
-    <%= link_to "Add plants to garden", "/users/gardens/#{garden.id}/plants/new"%><br>
-  <% end %>
+  <div class="container mt-4">
+    <div class="row">
+      <% @gardens.each do |garden| %>
+        <% if garden.plants.any? == true %>
+          <div class="col-auto mb-3">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title center"><%= link_to "#{garden.name}", "/users/gardens/#{garden.id}"%></h5>
+                    <img class="card-img-top" src="<%= garden.plants[0].image %>" alt="<%= garden.plants[0].name %>" style="width:250px;height:250px;">
+                </div>
+                <small class="text-muted center">
+                  <%= link_to "Add Plants to Garden", "/users/gardens/#{garden.id}/plants/new", method: :get %>
+                </small>
+              </div>
+            </div>
+            <% else %>
+            <div class="col-auto mb-3">
+              <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title center"><%= link_to "#{garden.name}", "/users/gardens/#{garden.id}"%></h5>
+                </div>
+                <small class="text-muted center">
+                  <%= link_to "Add Plants to Garden", "/users/gardens/#{garden.id}/plants/new", method: :get %>
+                </small>
+              </div>
+            </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 <% end %>
+
+<br>
+<div class="center">
+  <a class="btn btn-success" href="/users/gardens/new" role="button">Create a New Garden</a>
+</div>

@@ -16,7 +16,8 @@ class Users::GardensController < ApplicationController
       zip_code: garden_params[:zip_code],
       light: garden_params[:light]
     )
-    redirect_to "/dashboard"
+    @garden = Garden.last
+    redirect_to "/users/gardens/#{@garden.id}/plants/new"
   end
 
   private

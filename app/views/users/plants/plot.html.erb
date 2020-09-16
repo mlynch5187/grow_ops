@@ -1,16 +1,33 @@
-<h4>You've chosen your plants, now place them!</h4>
-<h5>Remaining plot size: <%= @size %> cm2</h5>
+<div class="center">
+  <h4>You've chosen your plants, now place them!</h4>
+  <h5>Remaining plot size: <%= @size %> cm2</h5>
+  <h6>Select the number of each plant desired</h6>
+</div>
 
-<h6>Select the number of each plant desired</h6>
 
 <%= form_tag("/users/gardens/#{@garden.id}/plants/new_garden") do %>
+<div class="container mt-4">
+  <div class="row">
   <% @plants.each do |plant| %>
-    <h3><b><%= plant.name %></b></h3><br>
-    <img src="<%= plant.images[:flower].first[:image_url] %>" alt="<%= plant.name %>" style="width:200px;height:300px;"><br>
-    <p>Current Quantity: <%= session[:plant_quantity][plant.id.to_s] %> </p>
-
-    <%= link_to "Increase Amount", "/users/gardens/#{@garden.id}/plants/#{plant.id}/increase", method: :put %>
-    <%= link_to "Decrease Amount", "/users/gardens/#{@garden.id}/plants/#{plant.id}/decrease", method: :put %><br><br>
+    <div class="col-auto mb-3">
+      <div class="card" style="width: 18rem;">
+          <div class="card-body">
+              <img class="card-img-top" src="<%= plant.images[:flower].first[:image_url] %>" alt="<%= plant.name %>" style="width:250px;height:250px;">
+              <h5 class="card-title"><%= plant.name%></h5>
+              <p class="card-text"></p>Current Quantity: <%= session[:plant_quantity][plant.id.to_s] %></p>
+    <small class="text-muted">
+      <%= link_to "Increase Amount", "/users/gardens/#{@garden.id}/plants/#{plant.id}/increase", method: :put %>
+      <%= link_to "Decrease Amount", "/users/gardens/#{@garden.id}/plants/#{plant.id}/decrease", method: :put %>
+      </small>
+    </div>
+  </div>
+    </div>
   <% end %>
-<%= submit_tag 'Create Garden', class: 'submit' %>
+  </div>
+  <div class="center">
+    <%= button_tag(type: "submit", class: "btn btn-success") do %>
+    Create Garden
+    <% end %>
+  </div>
+</div>
 <% end %>

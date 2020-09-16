@@ -18,7 +18,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class= 'nav-button'>
-            <p style="color:white;"><%= "What will you grow today? #{current_user.email}" if current_user %><%= link_to "Home", "/dashboard" if current_user %><%= link_to "Logout", "/", method: :delete if current_user %></p>
+            <p style="color:white;"><%= "What will you grow today? #{current_user.email}" if current_user %> | <%= link_to "Home", "/dashboard" if current_user %> | <%= link_to "Logout", "/", method: :delete if current_user %></p>
         </li>
       </ul>
     </div>
@@ -33,6 +33,6 @@
     <%= yield %>
   </body>
     <footer>
-      <small>2020 - Mod 3 Paired Project - Grow Ops<br>Nick Edwin, Chandler Hulstrom, Michael Alex Lynch, Ryan Laleh</small>
+      <small>2020 - Mod 3 Paired Project - Grow Ops By: Nick Edwin, Chandler Hulstrom, Michael Alex Lynch, Ryan Laleh</small>
     </footer>
 </html>

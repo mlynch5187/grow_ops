@@ -33,7 +33,7 @@ This diagram shows all of our database tables and how they're linked to one anot
 
 Building out this application, we consume a few different API's.
 
-- Trefle API
+### Trefle API
   This is the main squeeze of our application. The trefle API has an exstensive collection of plants from vegetables to flowers, and even a variety of grass types to a variety of trees.
   With each plant, we have access to a wide array of data. For the functions of this app, the data we collect is as follows:
     - plant name
@@ -45,12 +45,12 @@ Building out this application, we consume a few different API's.
     - max and min ph
     - max and min temperatures
     - number of days to harvest
-
-  - Soil Grids API
+    
+### Soil Grids API
     In order to for our application to give the users a list of plants they can choose for their garden, we need to feed ph levels of the soil and/or the lighting levels of the garden to Trefle's API.
     To get the PH levels, we use Soil Grids.
     Soil Grids is an API where we can find the PH levels based on Longitude and Latitude
 
-  - Open Data Soft API
+### Open Data Soft API
     In order to get Longitude and Latitude, we need our users to give us their zip code.
     Open Data Soft is a API that allows us to convert a zip code into longitude and latitude, which we then use to collect the PH levels through Soil Grids, which we can then finally create a list of plants that our users can use for their garden.

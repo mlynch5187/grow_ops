@@ -1,8 +1,8 @@
 Created By:  
 [Chandler Hulstrom](https://github.com/Chulstro)<br>
 [Nick Edwin](https://github.com/NickEdwin)<br>
-[Michael Alex Lynch](https://github.com/mlynch5187)<br>
 [Ryan Laleh](https://github.com/RyN21)<br>
+[Michael Alex Lynch](https://github.com/mlynch5187)<br>
 
 # Grow Ops
 

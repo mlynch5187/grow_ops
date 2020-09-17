@@ -20,11 +20,11 @@ RSpec.describe "Plots Page" do
     # @garden1 = create(:garden, user_id: @john.id, zip_code: 80111)
   end
 
-  it "plot page has attributes" do
+  xit "plot page has attributes" do
     garden = Garden.last
-    within ".garden-#{garden.id}" do
-      click_on("Add plants to garden")
-    end
+    # within "#checkbox-#{pet_1.id}" do
+    #   check "applied_for_"
+    # end
     # check 'plant'
     # check 'plant'
     # check 'plant'

@@ -24,18 +24,18 @@ class PlantObject
               :link_to_show_page
 
   def initialize(plant_info)
-    @id = plant_info[:data][:main_species][:id]
-    @name = plant_info[:data][:main_species][:common_name]
-    @row_spacing = plant_info[:data][:main_species][:growth][:row_spacing][:cm]
-    @spread = plant_info[:data][:main_species][:growth][:spread][:cm]
-    @edible = plant_info[:data][:main_species][:edible]
-    @images = plant_info[:data][:main_species][:images]
-    @light = plant_info[:data][:main_species][:growth][:light]
-    @ph_min = plant_info[:data][:main_species][:growth][:ph_minimum]
-    @ph_max = plant_info[:data][:main_species][:growth][:ph_maximum]
-    @days_to_harvest = plant_info[:data][:main_species][:growth][:days_to_harvest]
-    @min_temp = plant_info[:data][:main_species][:growth][:minimum_temperature][:deg_f]
-    @max_temp = plant_info[:data][:main_species][:growth][:maximum_temperature][:deg_f]
+    @id                = plant_info[:data][:main_species][:id]
+    @name              = plant_info[:data][:main_species][:common_name]
+    @row_spacing       = plant_info[:data][:main_species][:growth][:row_spacing][:cm]
+    @spread            = plant_info[:data][:main_species][:growth][:spread][:cm]
+    @edible            = plant_info[:data][:main_species][:edible]
+    @images            = plant_info[:data][:main_species][:images]
+    @light             = plant_info[:data][:main_species][:growth][:light]
+    @ph_min            = plant_info[:data][:main_species][:growth][:ph_minimum]
+    @ph_max            = plant_info[:data][:main_species][:growth][:ph_maximum]
+    @days_to_harvest   = plant_info[:data][:main_species][:growth][:days_to_harvest]
+    @min_temp          = plant_info[:data][:main_species][:growth][:minimum_temperature][:deg_f]
+    @max_temp          = plant_info[:data][:main_species][:growth][:maximum_temperature][:deg_f]
     @link_to_show_page = plant_info[:data][:main_species][:links][:self]
   end
 

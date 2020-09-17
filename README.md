@@ -35,16 +35,16 @@ Building out this application, we consumes a few different API's.
 
 ### Trefle API
   This is the main squeeze of our application. The trefle API has an exstensive collection of plants from vegetables to flowers, and even a variety of grass types to a variety of trees.
-  With each plant, we have access to a wide array of data. For the functions of this app, the data we collected is as follows:
-    - plant name
-    - row spacing
-    - spread
-    - edible
-    - images
-    - light
-    - max and min ph
-    - max and min temperatures
-    - number of days to harvest
+  With each plant, we have access to a wide array of data. For the functions of this app, the data we collected is as follows:<br>
+    - plant name<br>
+    - row spacing<br>
+    - spread<br>
+    - edible<br>
+    - images<br>
+    - light<br>
+    - max and min ph<br>
+    - max and min temperatures<br>
+    - number of days to harvest<br>
     
 ### Soil Grids API
    In order to for our application to give the users a list of plants they can choose for their garden, we need to feed ph levels of the soil and/or the lighting levels of the garden to Trefle's API.

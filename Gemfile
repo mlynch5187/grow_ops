@@ -28,9 +28,12 @@ group :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'launchy'
-  gem 'simplecov'
   gem 'shoulda-matchers'
+  gem 'webmock'
+  gem 'vcr'
 end
+
+gem 'simplecov', require: false, group: :test
 
 gem 'bootsnap', '>= 1.1.0', require: false
 

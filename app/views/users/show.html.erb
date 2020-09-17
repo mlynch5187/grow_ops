@@ -3,25 +3,27 @@
     <div class="row">
       <% @gardens.each do |garden| %>
         <% if garden.plants.any? == true %>
-          <div class="col-auto mb-3">
+          <div class="col-auto mb-3" id="garden-<%= garden.id %>">
             <div class="card bg-dark" style="width: 18rem;">
                 <div class="card-body">
                   <h5 class="card-title center"><a href="/users/gardens/<%= "#{garden.id}" %>" class="text-white bg-dark"><%= "#{garden.name}"%></a></h5>
                     <img class="card-img-top" src="<%= garden.plants[0].image %>" alt="<%= garden.plants[0].name %>" style="width:250px;height:250px;">
                 </div>
                 <small class="text-muted center">
-                  <a href="/users/gardens/<%= "#{garden.id}/plants/new" %>" class="text-white bg-dark">Add Plants to Garden</a>
+                  <a href="/users/gardens/<%= "#{garden.id}/plants/new" %>" class="text-white bg-dark" id="garden-<% garden.id %>">Add Plants to Garden</a>
+                  <%= link_to "Delete Garden", "/users/gardens/#{garden.id}", method: :delete, class: "text-white bg-dark" %>
                 </small>
               </div>
             </div>
             <% else %>
-            <div class="col-auto mb-3">
+            <div class="col-auto mb-3" id="garden-<%= garden.id %>">
               <div class="card bg-dark" style="width: 18rem;">
                 <div class="card-body">
                   <h5 class="card-title center"><a href="/users/gardens/<%= "#{garden.id}" %>" class="text-white bg-dark"><%="#{garden.name}"%></a></h5>
                 </div>
                 <small class="text-muted center">
                   <a href="/users/gardens/<%= "#{garden.id}/plants/new" %>" class="text-white bg-dark">Add Plants to Garden</a>
+                  <%= link_to "Delete Garden", "/users/gardens/#{garden.id}", method: :delete, class: "text-white bg-dark" %>
                 </small>
               </div>
             </div>

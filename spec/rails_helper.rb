@@ -1,4 +1,11 @@
+require 'simplecov'
+require 'vcr'
+SimpleCov.start do
+  add_filter 'app/controllers/application_controller.rb'
+end
+
 # This file is copied to spec/ when you run 'rails generate rspec:install'
+
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../config/environment', __dir__)
@@ -90,5 +97,13 @@ Shoulda::Matchers.configure do |config|
         }
     }
     OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new(omniauth_google_hash)
+  end
+
+  VCR.configure do |config|
+    config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
+    config.hook_into :webmock
+    config.filter_sensitive_data('DONT_SHARE_MY_PROPUBLIC_SECRET_KEY') { ENV['PROPUBLICA_KEY'] }
+    config.default_cassette_options = { re_record_interval: 7.days }
+    config.configure_rspec_metadata!
   end
 end

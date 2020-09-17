@@ -1,0 +1,150 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:9292/ph?80503
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '1166'
+    body:
+      encoding: UTF-8
+      string: '{"type":"Feature","geometry":{"type":"Point","coordinates":[-85.04948,43.141649]},"properties":{"layers":[{"name":"phh2o","unit_measure":{"d_factor":10,"mapped_units":"pH*10","target_units":"-","uncertainty_unit":""},"depths":[{"range":{"top_depth":0,"bottom_depth":5,"unit_depth":"cm"},"label":"0-5cm","values":{"Q0.05":45,"Q0.5":55,"Q0.95":75,"mean":57,"uncertainty":5}},{"range":{"top_depth":5,"bottom_depth":15,"unit_depth":"cm"},"label":"5-15cm","values":{"Q0.05":46,"Q0.5":56,"Q0.95":75,"mean":58,"uncertainty":5}},{"range":{"top_depth":15,"bottom_depth":30,"unit_depth":"cm"},"label":"15-30cm","values":{"Q0.05":46,"Q0.5":57,"Q0.95":75,"mean":58,"uncertainty":5}},{"range":{"top_depth":30,"bottom_depth":60,"unit_depth":"cm"},"label":"30-60cm","values":{"Q0.05":48,"Q0.5":58,"Q0.95":80,"mean":60,"uncertainty":6}},{"range":{"top_depth":60,"bottom_depth":100,"unit_depth":"cm"},"label":"60-100cm","values":{"Q0.05":49,"Q0.5":61,"Q0.95":82,"mean":65,"uncertainty":5}},{"range":{"top_depth":100,"bottom_depth":200,"unit_depth":"cm"},"label":"100-200cm","values":{"Q0.05":50,"Q0.5":72,"Q0.95":85,"mean":69,"uncertainty":5}}]}]},"query_time_s":0.38478946685791016}'
+  recorded_at: Thu, 17 Sep 2020 19:22:13 GMT
+- request:
+    method: get
+    uri: https://trefle.io/api/v1/plants?filter%5Bvegetable%5D=true&page=1&range%5Bph_maximum%5D=3.8,7.8&token=Xi2QNQLnAkgVCVgRN7GAhuwaQhbdj1KbI1OPqZ4oY2w
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.17.7
+      Date:
+      - Thu, 17 Sep 2020 19:22:14 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Etag:
+      - W/"8b44f676839bd4644a53966c845fd6ae"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - f6d81a9fb9cd7551e1a08f3157f12030
+      X-Runtime:
+      - '0.434251'
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":[{"id":176845,"common_name":"garden sorrel","slug":"rumex-acetosa","scientific_name":"Rumex
+        acetosa","year":1753,"bibliography":"Sp. pl. 1:337.  1753, nom. cons.","author":"L.","status":"accepted","rank":"species","family_common_name":"Buckwheat
+        family","genus_id":2722,"image_url":"https://bs.floristic.org/image/o/780b9f3c63318588b8874d608c2d4900fc2adce3","synonyms":["Lapathum
+        pratense","Rumex planellae","Acetosa officinalis","Acetosa pratensis subsp.
+        fontanopaludosa","Lapathum acetosa","Rumex bulbosus","Acetosa pratensis","Rumex
+        bidentula","Rumex biformis","Rumex sagittifolius","Rumex acuminatus","Rumex
+        agrestis","Acetosa agrestis","Rumex olitoria","Acetosa fontanopaludosa","Rumex
+        commersonii","Rumex pseudoacetosa","Acetosa hastifolia","Acetosa subalpina","Rumex
+        micranthus","Rumex angustatus","Acetosa pratensis subsp. biformis","Rumex
+        acetosa subsp. biformis","Acetosa olitoria","Acetosa bidentula","Rumex oblongus","Acetosa
+        hastulata","Rumex oxyotus","Acetosa amplexicaulis","Acetosa angustata","Rumex
+        triangularis","Rumex fontanopaludosus"],"genus":"Rumex","family":"Polygonaceae","links":{"self":"/api/v1/species/rumex-acetosa","plant":"/api/v1/plants/rumex-acetosa","genus":"/api/v1/genus/rumex"}},{"id":144423,"common_name":"hairy
+        cat''s ear","slug":"hypochaeris-radicata","scientific_name":"Hypochaeris radicata","year":1753,"bibliography":"Sp.
+        Pl.: 811 (1753)","author":"L.","status":"accepted","rank":"species","family_common_name":"Aster
+        family","genus_id":3716,"image_url":"http://d2seqvvyy3b8p2.cloudfront.net/6d0af0bfb352c0254ea3019d7b6a5844.jpg","synonyms":["Apargia
+        serotina","Hypochaeris radiata","Achyrophorus jussieui","Achyrophorus radicatus","Leontodon
+        ciliatus","Hypochaeris jussieui"],"genus":"Hypochaeris","family":"Asteraceae","links":{"self":"/api/v1/species/hypochaeris-radicata","plant":"/api/v1/plants/hypochaeris-radicata","genus":"/api/v1/genus/hypochaeris"}},{"id":154547,"common_name":"cassava","slug":"manihot-esculenta","scientific_name":"Manihot
+        esculenta","year":1766,"bibliography":"Inst. rei herb. 1:167.  1766","author":"Crantz","status":"accepted","rank":"species","family_common_name":"Spurge
+        family","genus_id":4437,"image_url":"https://bs.floristic.org/image/o/84adae73a276fc2ff0a9916ecf86f794b3c8ba76","synonyms":["Jatropha
+        janipha","Manihot palmata var. flabellifolia","Manihot esculenta var. hispaniolensis","Manihot
+        esculenta var. jamaicensis","Manihot dulcis var. diffusa","Jatropha digitiformis","Mandioca
+        aipi","Jatropha aipi","Mandioca utilissima","Manihot esculenta var. fertilis","Manihot
+        esculenta var. luteola","Jatropha loureiroi","Manihot esculenta var. debilis","Manihot
+        aypi","Manihot edule","Jatropha silvestris","Manihot cannabina","Manihot palmata
+        var. diffusa","Manihot esculenta var. sprucei","Manihot dulcis var. aipi","Manihot
+        palmata var. digitiformis","Manihot esculenta var. rufescens","Manihot esculenta
+        subsp. flabellifolia","Manihot esculenta var. zimmermannii","Manihot esculenta
+        var. flavicaulis","Janipha aipi","Manihot esculenta var. argentea","Manihot
+        esculenta var. pohlii","Jatropha dulcis","Jatropha stipulata","Manihot sprucei","Manihot
+        flabellifolia","Manihot flexuosa","Jatropha diffusa","Manihot esculenta var.
+        domingensis","Mandioca dulcis","Manihot esculenta var. mutabilis","Manihot
+        cassava","Manihot esculenta var. digitifolia","Manihot esculenta var. communis","Manihot
+        digitiformis","Manihot palmata var. aipi","Manihot loureiroi","Manihot dulcis
+        var. flabellifolia","Manihot diffusa","Jatropha paniculata","Jatropha mitis","Manihot
+        esculenta var. nodosa","Manihot esculenta subsp. grandifolia","Manihot esculenta
+        var. fuscescens","Manihot esculenta var. coalescens","Manihot esculenta var.
+        ramosissima","Manihot guyanensis","Manihot utilissima","Manihot melanobasis","Manihot
+        manihot","Manihot dulcis","Manihot aipi","Janipha manihot"],"genus":"Manihot","family":"Euphorbiaceae","links":{"self":"/api/v1/species/manihot-esculenta","plant":"/api/v1/plants/manihot-esculenta","genus":"/api/v1/genus/manihot"}},{"id":330394,"common_name":"Pignut","slug":"conopodium-majus","scientific_name":"Conopodium
+        majus","year":1886,"bibliography":"Fl. Montpellier ed. 2, 214.  1892","author":"Loret
+        (Gouan)","status":"accepted","rank":"species","family_common_name":"Carrot
+        family","genus_id":7840,"image_url":"https://bs.floristic.org/image/o/6558bd191ff2efc5a3d0978e42761e25b9122175","synonyms":["Carum
+        majus","Bunium minus","Bunium majus","Selinum janotta","Conopodium semipubens","Carum
+        flexuosum","Conopodium daucifolium","Conopodium denudatum","Myrrhis tenerrima","Bunium
+        ternatum","Pimpinella flexuosa","Bunium pilosum","Meum carvifolium","Bunium
+        pygmaeum","Bunium flexuosum","Myrrhis ammoides","Myrrhis pyrenaica","Bulbocastanum
+        majus","Carum italicum","Myrrhis bunium","Bunium denudatum","Conopodium silaifolium"],"genus":"Conopodium","family":"Apiaceae","links":{"self":"/api/v1/species/conopodium-majus","plant":"/api/v1/plants/conopodium-majus","genus":"/api/v1/genus/conopodium"}},{"id":191969,"common_name":"mung
+        bean","slug":"vigna-radiata","scientific_name":"Vigna radiata","year":1954,"bibliography":"Fl.
+        Congo Belge 6: 286 (1954)","author":"(L.) R.Wilczek","status":"accepted","rank":"species","family_common_name":"Pea
+        family","genus_id":6303,"image_url":"https://bs.floristic.org/image/o/0457e52a60ae8a99c399730f8d3719b937c37f13","synonyms":["Azukia
+        radiata","Pueraria chanetii","Phaseolus radiatus"],"genus":"Vigna","family":"Fabaceae","links":{"self":"/api/v1/species/vigna-radiata","plant":"/api/v1/plants/vigna-radiata","genus":"/api/v1/genus/vigna"}},{"id":107471,"common_name":"horseradish","slug":"armoracia-rusticana","scientific_name":"Armoracia
+        rusticana","year":1800,"bibliography":"Oekon. Fl. Wetterau 2: 426 (1800)","author":"P.Gaertn.,
+        B.Mey. \u0026 Scherb.","status":"accepted","rank":"species","family_common_name":"Mustard
+        family","genus_id":656,"image_url":"https://bs.floristic.org/image/o/5d20dc2d5eef50a8da23bf36195964b45ee73257","synonyms":["Armoracia
+        rustica","Raphanis magna","Cochlearia variifolia","Cochlearia lancifolia","Rorippa
+        rusticana","Crucifera armoracia","Cochlearia rusticana","Cardamine armoracia","Armoracia
+        sativa","Radicula armoracia","Nasturtium armoracia","Cochlearia armoracia"],"genus":"Armoracia","family":"Brassicaceae","links":{"self":"/api/v1/species/armoracia-rusticana","plant":"/api/v1/plants/armoracia-rusticana","genus":"/api/v1/genus/armoracia"}},{"id":110891,"common_name":"early
+        yellowrocket","slug":"barbarea-verna","scientific_name":"Barbarea verna","year":1860,"bibliography":"Fl.
+        Brandenburg 1(1):36.  1860","author":"Asch. (Mill.)","status":"accepted","rank":"species","family_common_name":"Mustard
+        family","genus_id":882,"image_url":"https://bs.floristic.org/image/o/8e5aaa82e5c96f003ba6fd065dca7a9fd2d9f4b4","synonyms":["Barbarea
+        praecox","Barbarea patula","Barbarea longisiliqua","Barbarea erysimoides","Erysimum
+        tenuifolium","Crucifera praecox","Campe praecox","Barbarea australis","Erysimum
+        praecox","Barbarea brevistyla","Erysimum vernum","Campe verna"],"genus":"Barbarea","family":"Brassicaceae","links":{"self":"/api/v1/species/barbarea-verna","plant":"/api/v1/plants/barbarea-verna","genus":"/api/v1/genus/barbarea"}}],"links":{"self":"/api/v1/plants?filter%5Bvegetable%5D=true\u0026page=1\u0026range%5Bph_maximum%5D=3.8%2C7.8","first":"/api/v1/plants?filter%5Bvegetable%5D=true\u0026page=1\u0026range%5Bph_maximum%5D=3.8%2C7.8","last":"/api/v1/plants?filter%5Bvegetable%5D=true\u0026page=1\u0026range%5Bph_maximum%5D=3.8%2C7.8"},"meta":{"total":7}}
+
+'
+  recorded_at: Thu, 17 Sep 2020 19:22:14 GMT
+recorded_with: VCR 6.0.0

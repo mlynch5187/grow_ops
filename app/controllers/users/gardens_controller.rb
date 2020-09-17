@@ -20,6 +20,11 @@ class Users::GardensController < ApplicationController
     redirect_to "/users/gardens/#{@garden.id}/plants/new"
   end
 
+  def destroy
+    Garden.destroy(params[:id])
+    redirect_to '/dashboard'
+  end
+
   private
 
   def garden_params

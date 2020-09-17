@@ -6,7 +6,7 @@ class Garden < ApplicationRecord
   validates  :light, presence: true
 
   belongs_to :user
-  has_many   :plants
+  has_many   :plants, dependent: :destroy
 
   def plot_size
     length_cm * width_cm

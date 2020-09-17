@@ -1,8 +1,8 @@
 Created By:  
-[Chandler Hulstrom](https://github.com/Chulstro)
-[Nick Edwin](https://github.com/NickEdwin)
-[Michael Alex Lynch](https://github.com/mlynch5187)
-[Ryan Laleh](https://github.com/RyN21)
+[Chandler Hulstrom](https://github.com/Chulstro)<br>
+[Nick Edwin](https://github.com/NickEdwin)<br>
+[Michael Alex Lynch](https://github.com/mlynch5187)<br>
+[Ryan Laleh](https://github.com/RyN21)<br>
 
 # Grow Ops
 
@@ -13,17 +13,6 @@ The idea behind this application is to give users a guide to set up and plan the
 The user will simply need to add the size of their garden, their zip code, and the estimated lighting, and our app will give a list of all the possible vegetables and how much they can plant within their garden.
 
 Our code is open source because we would like to show off what we have, and also invite others to contribute too if they feel inclined to do so.
-
-# Functionality
-
-- At the start of our application, We use Google Oauth to sign in
-- Once logged in, the user will be invited to create a new garden
-- When creating the garden, the user will input the following:
-  - Garden name
-  - Length in feet and inches
-  - Width in feet and inches
-  - Estimated lighting
-  - 5 digit zip code
 
 # Languages/Frameworks
 

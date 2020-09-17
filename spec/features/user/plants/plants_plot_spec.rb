@@ -16,29 +16,12 @@ RSpec.describe "Plots Page" do
     fill_in "light", with: 6
 
     click_on("Create Garden")
-    # @garden1 = create(:garden, user_id: @john.id, zip_code: 80502)
-    # @garden1 = create(:garden, user_id: @john.id, zip_code: 80111)
   end
 
-  xit "plot page has attributes" do
+  it "plot page has attributes" do
     garden = Garden.last
-    # within "#checkbox-#{pet_1.id}" do
-    #   check "applied_for_"
-    # end
-    # check 'plant'
-    # check 'plant'
-    # check 'plant'
-    # check 'plant'
-    click_button "Select Plants"
-    expect(current_path).to eq("/users/gardens/#{garden.id}/plants/plot")
-
-    expect(page).to have_content("You've chosen your plants, now place them!")
-    expect(page).to have_content("Remaining plot size:")
-    expect(page).to have_content("Select the number of each plant desired")
-    expect(page).to have_button("Increase Amount")
-    expect(page).to have_button("Decrease Amount")
-    expect(page).to have_button("Create Garden")
-
-    expect(current_path).to eq("/users/gardens/#{garden.id}/plants/plot")
+    expect(current_path).to eq("/users/gardens/#{garden.id}/plants/new")    
+    expect(page).to have_content("Choose your favorites to get started!")
+    expect(page).to have_button("Select Plants")
   end
 end

@@ -10,4 +10,10 @@ describe User, type: :model do
   describe "relationships" do
     it {should have_many :gardens}
   end
+
+  describe "methods" do
+    it "from_onmiauth" do
+      user = create(:omniauth_mock_user)
+    end
+  end
 end

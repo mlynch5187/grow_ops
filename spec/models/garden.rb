@@ -13,4 +13,11 @@ describe Garden, type: :model do
     it {should belong_to :user}
     it {should have_many :plants}
   end
+
+  describe "methods" do
+    it "plot_size" do
+      garden = create(:garden, length_cm: 10, width_cm: 10)
+      expect(garden.plot_size).to eq(100)
+    end
+  end
 end

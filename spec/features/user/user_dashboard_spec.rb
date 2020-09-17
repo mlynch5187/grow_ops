@@ -8,8 +8,7 @@ RSpec.describe 'As a logged in user' do
     visit '/dashboard'
   end
 
-  it "on my dashboard I see a header with user email, app info, log out button" do
-    save_and_open_page
+  it "on my dashboard I see a header with user email, app info, log out button" do    
     expect(page).to have_content("#{@john.email}")
     expect(page).to have_content("What will you grow today?")
     expect(page).to have_link("Logout")

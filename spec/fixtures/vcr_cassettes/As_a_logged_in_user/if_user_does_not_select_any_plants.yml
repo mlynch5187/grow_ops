@@ -23,11 +23,11 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Content-Length:
-      - '1165'
+      - '1166'
     body:
       encoding: UTF-8
-      string: '{"type":"Feature","geometry":{"type":"Point","coordinates":[-85.04948,43.141649]},"properties":{"layers":[{"name":"phh2o","unit_measure":{"d_factor":10,"mapped_units":"pH*10","target_units":"-","uncertainty_unit":""},"depths":[{"range":{"top_depth":0,"bottom_depth":5,"unit_depth":"cm"},"label":"0-5cm","values":{"Q0.05":45,"Q0.5":55,"Q0.95":75,"mean":57,"uncertainty":5}},{"range":{"top_depth":5,"bottom_depth":15,"unit_depth":"cm"},"label":"5-15cm","values":{"Q0.05":46,"Q0.5":56,"Q0.95":75,"mean":58,"uncertainty":5}},{"range":{"top_depth":15,"bottom_depth":30,"unit_depth":"cm"},"label":"15-30cm","values":{"Q0.05":46,"Q0.5":57,"Q0.95":75,"mean":58,"uncertainty":5}},{"range":{"top_depth":30,"bottom_depth":60,"unit_depth":"cm"},"label":"30-60cm","values":{"Q0.05":48,"Q0.5":58,"Q0.95":80,"mean":60,"uncertainty":6}},{"range":{"top_depth":60,"bottom_depth":100,"unit_depth":"cm"},"label":"60-100cm","values":{"Q0.05":49,"Q0.5":61,"Q0.95":82,"mean":65,"uncertainty":5}},{"range":{"top_depth":100,"bottom_depth":200,"unit_depth":"cm"},"label":"100-200cm","values":{"Q0.05":50,"Q0.5":72,"Q0.95":85,"mean":69,"uncertainty":5}}]}]},"query_time_s":0.5878646373748779}'
-  recorded_at: Thu, 17 Sep 2020 18:32:54 GMT
+      string: '{"type":"Feature","geometry":{"type":"Point","coordinates":[-85.04948,43.141649]},"properties":{"layers":[{"name":"phh2o","unit_measure":{"d_factor":10,"mapped_units":"pH*10","target_units":"-","uncertainty_unit":""},"depths":[{"range":{"top_depth":0,"bottom_depth":5,"unit_depth":"cm"},"label":"0-5cm","values":{"Q0.05":45,"Q0.5":55,"Q0.95":75,"mean":57,"uncertainty":5}},{"range":{"top_depth":5,"bottom_depth":15,"unit_depth":"cm"},"label":"5-15cm","values":{"Q0.05":46,"Q0.5":56,"Q0.95":75,"mean":58,"uncertainty":5}},{"range":{"top_depth":15,"bottom_depth":30,"unit_depth":"cm"},"label":"15-30cm","values":{"Q0.05":46,"Q0.5":57,"Q0.95":75,"mean":58,"uncertainty":5}},{"range":{"top_depth":30,"bottom_depth":60,"unit_depth":"cm"},"label":"30-60cm","values":{"Q0.05":48,"Q0.5":58,"Q0.95":80,"mean":60,"uncertainty":6}},{"range":{"top_depth":60,"bottom_depth":100,"unit_depth":"cm"},"label":"60-100cm","values":{"Q0.05":49,"Q0.5":61,"Q0.95":82,"mean":65,"uncertainty":5}},{"range":{"top_depth":100,"bottom_depth":200,"unit_depth":"cm"},"label":"100-200cm","values":{"Q0.05":50,"Q0.5":72,"Q0.95":85,"mean":69,"uncertainty":5}}]}]},"query_time_s":0.34091830253601074}'
+  recorded_at: Thu, 17 Sep 2020 19:22:19 GMT
 - request:
     method: get
     uri: https://trefle.io/api/v1/plants?filter%5Bvegetable%5D=true&page=1&range%5Bph_maximum%5D=3.8,7.8&token=Xi2QNQLnAkgVCVgRN7GAhuwaQhbdj1KbI1OPqZ4oY2w
@@ -49,7 +49,7 @@ http_interactions:
       Server:
       - nginx/1.17.7
       Date:
-      - Thu, 17 Sep 2020 18:32:55 GMT
+      - Thu, 17 Sep 2020 19:22:20 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -75,9 +75,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - eb411119ddbd0b36f064a16251c1a7c4
+      - 802c0a2ef9d0c2c02cc6b1d7f52c5344
       X-Runtime:
-      - '0.508225'
+      - '0.249933'
       Strict-Transport-Security:
       - max-age=15724800; includeSubDomains
     body:
@@ -146,7 +146,7 @@ http_interactions:
         praecox","Barbarea brevistyla","Erysimum vernum","Campe verna"],"genus":"Barbarea","family":"Brassicaceae","links":{"self":"/api/v1/species/barbarea-verna","plant":"/api/v1/plants/barbarea-verna","genus":"/api/v1/genus/barbarea"}}],"links":{"self":"/api/v1/plants?filter%5Bvegetable%5D=true\u0026page=1\u0026range%5Bph_maximum%5D=3.8%2C7.8","first":"/api/v1/plants?filter%5Bvegetable%5D=true\u0026page=1\u0026range%5Bph_maximum%5D=3.8%2C7.8","last":"/api/v1/plants?filter%5Bvegetable%5D=true\u0026page=1\u0026range%5Bph_maximum%5D=3.8%2C7.8"},"meta":{"total":7}}
 
 '
-  recorded_at: Thu, 17 Sep 2020 18:32:55 GMT
+  recorded_at: Thu, 17 Sep 2020 19:22:20 GMT
 - request:
     method: get
     uri: http://localhost:9292/ph?80111
@@ -173,8 +173,8 @@ http_interactions:
       - '1166'
     body:
       encoding: UTF-8
-      string: '{"type":"Feature","geometry":{"type":"Point","coordinates":[-85.04948,43.141649]},"properties":{"layers":[{"name":"phh2o","unit_measure":{"d_factor":10,"mapped_units":"pH*10","target_units":"-","uncertainty_unit":""},"depths":[{"range":{"top_depth":0,"bottom_depth":5,"unit_depth":"cm"},"label":"0-5cm","values":{"Q0.05":45,"Q0.5":55,"Q0.95":75,"mean":57,"uncertainty":5}},{"range":{"top_depth":5,"bottom_depth":15,"unit_depth":"cm"},"label":"5-15cm","values":{"Q0.05":46,"Q0.5":56,"Q0.95":75,"mean":58,"uncertainty":5}},{"range":{"top_depth":15,"bottom_depth":30,"unit_depth":"cm"},"label":"15-30cm","values":{"Q0.05":46,"Q0.5":57,"Q0.95":75,"mean":58,"uncertainty":5}},{"range":{"top_depth":30,"bottom_depth":60,"unit_depth":"cm"},"label":"30-60cm","values":{"Q0.05":48,"Q0.5":58,"Q0.95":80,"mean":60,"uncertainty":6}},{"range":{"top_depth":60,"bottom_depth":100,"unit_depth":"cm"},"label":"60-100cm","values":{"Q0.05":49,"Q0.5":61,"Q0.95":82,"mean":65,"uncertainty":5}},{"range":{"top_depth":100,"bottom_depth":200,"unit_depth":"cm"},"label":"100-200cm","values":{"Q0.05":50,"Q0.5":72,"Q0.95":85,"mean":69,"uncertainty":5}}]}]},"query_time_s":0.35733580589294434}'
-  recorded_at: Thu, 17 Sep 2020 18:32:57 GMT
+      string: '{"type":"Feature","geometry":{"type":"Point","coordinates":[-85.04948,43.141649]},"properties":{"layers":[{"name":"phh2o","unit_measure":{"d_factor":10,"mapped_units":"pH*10","target_units":"-","uncertainty_unit":""},"depths":[{"range":{"top_depth":0,"bottom_depth":5,"unit_depth":"cm"},"label":"0-5cm","values":{"Q0.05":45,"Q0.5":55,"Q0.95":75,"mean":57,"uncertainty":5}},{"range":{"top_depth":5,"bottom_depth":15,"unit_depth":"cm"},"label":"5-15cm","values":{"Q0.05":46,"Q0.5":56,"Q0.95":75,"mean":58,"uncertainty":5}},{"range":{"top_depth":15,"bottom_depth":30,"unit_depth":"cm"},"label":"15-30cm","values":{"Q0.05":46,"Q0.5":57,"Q0.95":75,"mean":58,"uncertainty":5}},{"range":{"top_depth":30,"bottom_depth":60,"unit_depth":"cm"},"label":"30-60cm","values":{"Q0.05":48,"Q0.5":58,"Q0.95":80,"mean":60,"uncertainty":6}},{"range":{"top_depth":60,"bottom_depth":100,"unit_depth":"cm"},"label":"60-100cm","values":{"Q0.05":49,"Q0.5":61,"Q0.95":82,"mean":65,"uncertainty":5}},{"range":{"top_depth":100,"bottom_depth":200,"unit_depth":"cm"},"label":"100-200cm","values":{"Q0.05":50,"Q0.5":72,"Q0.95":85,"mean":69,"uncertainty":5}}]}]},"query_time_s":0.44710278511047363}'
+  recorded_at: Thu, 17 Sep 2020 19:22:22 GMT
 - request:
     method: get
     uri: https://trefle.io/api/v1/plants?filter%5Bvegetable%5D=true&page=1&range%5Bph_maximum%5D=3.8,7.8&token=Xi2QNQLnAkgVCVgRN7GAhuwaQhbdj1KbI1OPqZ4oY2w
@@ -196,7 +196,7 @@ http_interactions:
       Server:
       - nginx/1.17.7
       Date:
-      - Thu, 17 Sep 2020 18:32:57 GMT
+      - Thu, 17 Sep 2020 19:22:22 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -222,9 +222,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 1756ead3f55b2678e0a5e4f92d1bc7c6
+      - fa45087d2da11f63601d8aeddc660c22
       X-Runtime:
-      - '0.049465'
+      - '0.246666'
       Strict-Transport-Security:
       - max-age=15724800; includeSubDomains
     body:
@@ -293,5 +293,5 @@ http_interactions:
         praecox","Barbarea brevistyla","Erysimum vernum","Campe verna"],"genus":"Barbarea","family":"Brassicaceae","links":{"self":"/api/v1/species/barbarea-verna","plant":"/api/v1/plants/barbarea-verna","genus":"/api/v1/genus/barbarea"}}],"links":{"self":"/api/v1/plants?filter%5Bvegetable%5D=true\u0026page=1\u0026range%5Bph_maximum%5D=3.8%2C7.8","first":"/api/v1/plants?filter%5Bvegetable%5D=true\u0026page=1\u0026range%5Bph_maximum%5D=3.8%2C7.8","last":"/api/v1/plants?filter%5Bvegetable%5D=true\u0026page=1\u0026range%5Bph_maximum%5D=3.8%2C7.8"},"meta":{"total":7}}
 
 '
-  recorded_at: Thu, 17 Sep 2020 18:32:58 GMT
+  recorded_at: Thu, 17 Sep 2020 19:22:23 GMT
 recorded_with: VCR 6.0.0

@@ -18,10 +18,36 @@ RSpec.describe "Plots Page", :vcr do
     click_on("Create Garden")
   end
 
-  it "plot page has attributes" do
+  it "plot page has attributes", :vcr do
     garden = Garden.last
     expect(current_path).to eq("/users/gardens/#{garden.id}/plants/new")
     expect(page).to have_content("Choose your favorites to get started!")
     expect(page).to have_button("Select Plants")
+
+    within "#plant-176845" do
+      check "plant[]"
+    end
+
+    click_button "Select Plants"
+
+    within "#plant-176845" do
+      expect(page).to have_content("Current Quantity: 0")
+    end
+
+    within "#plant-176845" do
+      click_on("Increase Amount")
+    end
+
+    within "#plant-176845" do
+      expect(page).to have_content("Current Quantity: 1")
+    end
+
+    within "#plant-176845" do
+      click_on("Decrease Amount")
+    end
+
+    within "#plant-176845" do
+      expect(page).to have_content("Current Quantity: 0")
+    end
   end
 end

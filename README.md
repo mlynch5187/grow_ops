@@ -16,12 +16,14 @@ Our code is open source because we would like to show off what we have, and also
 
 # Languages/Frameworks
 
-  - Ruby
-  - Rail
+  - Ruby 2.5.3
+  - Rail 5.1.7
   - Sinatra
-  - HTML
-  - CSS
+  - PostgreSQL
+  - ActiveRecord / SQL
+  - HTML/CSS
   - Bootstrap
+  - Faraday
 
 # Visual Representation of Schema   
 This diagram shows all of our database tables and how they're linked to one another.  

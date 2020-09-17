@@ -23,6 +23,7 @@
                 </div>
                 <small class="text-muted center">
                   <a href="/users/gardens/<%= "#{garden.id}/plants/new" %>" class="text-white bg-dark">Add Plants to Garden</a>
+                  <%= link_to "Delete Garden", "/users/gardens/#{garden.id}", method: :delete, class: "text-white bg-dark" %>    
                 </small>
               </div>
             </div>

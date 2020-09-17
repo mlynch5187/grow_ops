@@ -13,7 +13,20 @@
  *= require_tree .
  *= require_self
  */
+
  #flash-alert {
  	color: red;
  	margin: 10px 0px 20px 0px;
+ }
+
+ body  {
+   background-image: url("https://cdn1.photostockeditor.com/c/1512/green-close-up-photo-of-green-leaf-macro-macro-image.jpg");
+   background-color: #cccccc;
+   background-repeat: no-repeat;
+     background-attachment: fixed;
+     background-size: cover;
+     margin-bottom: 50px;
+     padding:0;
+     height:100%;
+
  }

@@ -1,7 +1,18 @@
-<h4><%= @garden.name %></h4><br>
-<h4>Current Plants in Garden:</h4>
+<div class="center">
+  <h4>Current Plants in: <%= @garden.name %></h4>
+</div>
 
+<div class="container mt-4">
+  <div class="row">
 <% @plants.each do |plant| %>
-  <img src="<%= plant.image %>" alt="<%= plant.name %>" style="width:200px;height:300px;"><br>
-  <%= link_to "#{plant.name}", "/users/gardens/#{@garden.id}/plants/#{plant.id}"%><br>
-<% end %>
+      <div class="col-auto mb-3">
+        <div class="card bg-dark" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title center"><a href="/users/gardens/<%= "#{@garden.id}/plants/ #{plant.id}" %>" class="text-white bg-dark"><%= plant.name %></a></h5>
+                <img class="card-img-top" src="<%= plant.image %>" alt="<%= plant.name %>" style="width:250px;height:250px;">
+            </div>
+          </div>
+        </div>
+    <% end %>
+  </div>
+</div>

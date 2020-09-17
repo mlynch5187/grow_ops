@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'As a logged in user' do
+RSpec.describe 'As a logged in user', :vcr do
   before(:each) do
     stub_omniauth
     @john   = create(:omniauth_mock_user)

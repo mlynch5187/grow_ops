@@ -5,6 +5,9 @@ RSpec.describe 'As a logged in user' do
     stub_omniauth
     @john = create(:omniauth_mock_user)
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@john)
+  end
+
+  it "can create a new garden", :vcr do
     visit '/users/gardens/new'
 
     fill_in "Name", with: "My new garden"
@@ -16,9 +19,6 @@ RSpec.describe 'As a logged in user' do
     fill_in "light", with: 6
 
     click_on("Create Garden")
-  end
-
-  it "can create a new garden" do
     garden = Garden.last
 
     expect(current_path).to eq("/users/gardens/#{garden.id}/plants/new")
@@ -27,38 +27,61 @@ RSpec.describe 'As a logged in user' do
     expect(page).to have_button("Select Plants")
   end
 
-  # it "can add plants to a new garden" do
-  #   garden = Garden.last
-  #
-  #   within ".garden-#{garden.id}" do
-  #     click_on("Add plants to garden")
-  #   end
-  #
-  #   expect(current_path).to eq("/users/gardens/#{garden.id}/plants/new")
-  #   expect(page).to have_content("We've randomly selected 50 plants that will grow in your garden")
-  #
-  #   within(first(".plants")) do
-  #     check "plant"
-  #   end
-  #   # within(first(".card")) do
-  #   #   check "plant"
-  #   # end
-  #
-  #   click_button "Select Plants"
-  #
-  #   expect(current_path).to eq("/users/gardens/#{garden.id}/plants/plot")
-  # end
+  it "can add plants to a new garden", :vcr do
+    garden = create(:garden, user: @john)
 
-  # it "if user does not select any plants" do
-  #   garden = Garden.last
-  #   within ".garden-#{garden.id}" do
-  #     click_on("Add plants to garden")
-  #   end
-  #
-  #   expect(current_path).to eq("/users/gardens/#{garden.id}/plants/new")
-  #   click_button "Select Plants"
-  #
-  #   expect(current_path).to eq("/users/gardens/#{garden.id}/plants/new")
-  #   expect(page).to have_content("Please select plants to add to your garden")
-  # end
+    visit '/dashboard'
+
+
+    within "#garden-#{garden.id}" do
+      click_on("Add Plants to Garden")
+    end
+
+    expect(current_path).to eq("/users/gardens/#{garden.id}/plants/new")
+    expect(page).to have_content("Choose your favorites to get started!")
+
+    within "#plant-176845" do
+      check "plant[]"
+    end
+
+    click_button "Select Plants"
+
+    expect(current_path).to eq("/users/gardens/#{garden.id}/plants/plot")
+  end
+
+  it "if user does not select any plants", :vcr do
+    garden = create(:garden, user: @john)
+
+    visit '/dashboard'
+
+    within "#garden-#{garden.id}" do
+      click_on("Add Plants to Garden")
+    end
+
+    expect(current_path).to eq("/users/gardens/#{garden.id}/plants/new")
+    click_button "Select Plants"
+
+    expect(current_path).to eq("/users/gardens/#{garden.id}/plants/new")
+    expect(page).to have_content("Please select plants to add to your garden")
+  end
+
+  it "shows plant recommendations without ph levels", :vcr do
+    visit '/users/gardens/new'
+
+    fill_in "Name", with: "My new garden"
+    fill_in "length_feet", with: 1
+    fill_in "length_inches", with: 2
+    fill_in "width_feet", with: 3
+    fill_in "width_inches", with: 4
+    fill_in "zip_code", with: "21044"
+    fill_in "light", with: 6
+
+    click_on("Create Garden")
+    garden = Garden.last
+
+    expect(current_path).to eq("/users/gardens/#{garden.id}/plants/new")
+
+    expect(page).to have_content("Choose your favorites to get started!")
+    expect(page).to have_button("Select Plants")
+  end
 end

@@ -4,6 +4,10 @@ Created By:
 [Ryan Laleh](https://github.com/RyN21)<br>
 [Michael Alex Lynch](https://github.com/mlynch5187)<br>
 
+[Production Demo](https://grow-ops.herokuapp.com/)
+
+[Sinatra micro servide repo](https://github.com/mlynch5187/grow_calls)
+
 # Grow Ops
 
 Grow Ops is a Rails Application for gardeners, new and experienced alike.
@@ -57,6 +61,5 @@ Building out this application, we consumes a few different API's.
 
 
 
--sinatra repo link 
--deplotment link
+
 -known issues and bugs that could be worked on

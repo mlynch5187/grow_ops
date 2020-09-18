@@ -57,5 +57,6 @@ Building out this application, we consumes a few different API's.
 
 
 
-sinatra repo link 
-deplotment link
+-sinatra repo link 
+-deplotment link
+-known issues and bugs that could be worked on

@@ -6,7 +6,7 @@ Created By:
 
 [Production Demo](https://grow-ops.herokuapp.com/)
 
-[Sinatra micro servide repo](https://github.com/mlynch5187/grow_calls)
+[Sinatra micro service repo](https://github.com/mlynch5187/grow_calls)
 
 # Grow Ops
 

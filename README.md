@@ -60,6 +60,3 @@ Building out this application, we consumes a few different API's.
    Open Data Soft is a API that allows us to convert a zip code into longitude and latitude, which we then use to collect the PH levels through Soil Grids, which we can then finally create a list of plants that our users can use for their garden.
 
 
-
-
--known issues and bugs that could be worked on
